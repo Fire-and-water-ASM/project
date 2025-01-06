@@ -9,47 +9,45 @@
 
 	for_bgBaseColor:
 
-   		beq $9, $0, draw_line   # If the counter reaches 0, go to draw the line
+   		beq $9, $0, draw_map   # If the counter reaches 0, go to draw the line
     	sw $10, 0($8)           # Paint pixel with background color
     	addi $8, $8, 4          # Increment the address by 4 (next pixel)
     	addi $9, $9, -1         # Decrement the counter
     	j for_bgBaseColor       # Go back to the loop
 
-    # --- Draw the Horizontal Line ----------------------------- #
+    # --- Draw the Horizontal Line ----------------------------------- #
 
-	draw_line:
+	draw_map:
 	
     	lui $8, 0x1001          # Reset the base address
     	ori $10, $0, 0x706535   # Line color (#706535)
 
-    # Horizontal line configuration
+    # --- Paint the Route ------------------------------------------- #
     
-    	addi $11, $0, 100        # Line length (in logical pixels)
-    	addi $12, $0, 20        # Initial position (logical column)
-    	addi $13, $0, 50       # Line position (logical row)
-
-    # Calculate the starting address of the line
+    	addi $11, $0, 14
+    	addi $12, $0, 68
+    	addi $13, $0, 57344
     
-    	mul $13, $13, 1024      # logical_row * real_width (1024)
-    	mul $12, $12, 2         # logical_column * 2
-    	add $13, $13, $12       # row + column
-    	add $8, $8, $13         # Starting address of the line (corrected)
-
-    # Loop to draw the line
-    
-	for_horizontal:
-	
-    	beq $11, $0, end        # If length is 0, exit
-    	sw $10, 0($8)           # Paint pixel with the line color
-    	addi $8, $8, 1024       # Increment the address by 1024 weight line
-    	sw $10, 0($8) 	     # Paint pixel with the line color
-    	addi $8, $8, -1024      # back original address
-    	addi $8, $8, 4	     # Increment the address by 4 (next logical pixel)
-    	addi $11, $11, -1       # Decrease the line length
-    	j for_horizontal        # Continue the loop
-
-    # --- Finalize ------------------------------------------------ #
-
+    draw_route:	
+    	
+    	beq $11, $0, end
+    	
+    	addi $13, $13, +1024
+    	add $8, $8, $13
+    	
+    	addi $11, $11, -1
+    	
+    	draw_line:
+    	
+    	beq $12, $0, draw_route
+    	
+    	sw $10, 0($8)
+    	
+    	addi $8, $8, +4
+    	addi $12, $12, -1
+    	
+    	j draw_line
+    	
 	end:
     	addi $2, $0, 10         # End the program
     	syscall
