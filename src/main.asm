@@ -25,8 +25,8 @@
     # Horizontal line configuration
     
     	addi $11, $0, 100        # Line length (in logical pixels)
-    	addi $12, $0, 20        # Initial position (logical column)
-    	addi $13, $0, 50       # Line position (logical row)
+    	addi $12, $0, 0        # Initial position (logical column)
+    	addi $13, $0, 57       # Line position (logical row)
 
     # Calculate the starting address of the line
     
@@ -41,14 +41,11 @@
 	
     	beq $11, $0, end        # If length is 0, exit
     	sw $10, 0($8)           # Paint pixel with the line color
-    	addi $8, $8, 1024       # Increment the address by 1024 weight line
-    	sw $10, 0($8) 	     # Paint pixel with the line color
-    	addi $8, $8, -1024      # back original address
     	addi $8, $8, 4	     # Increment the address by 4 (next logical pixel)
     	addi $11, $11, -1       # Decrease the line length
     	j for_horizontal        # Continue the loop
 
-    # --- Finalize ------------------------------------------------ #
+    # --- End ------------------------------------------------ #
 
 	end:
     	addi $2, $0, 10         # End the program
