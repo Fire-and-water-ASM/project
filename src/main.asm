@@ -24,18 +24,12 @@
 
     # Horizontal line configuration
     
-<<<<<<< HEAD
     	addi $11, $0, 68        # Line length (in logical pixels)
     	addi $12, $0, 0        # Initial position (logical column)
     	addi $13, $0, 57       # Line position (logical row)
     	add  $14, $0, $11	    # Storing the line lenght in $14
     	addi $15, $0, 0        # Line counter
     	addi $16, $0, 14       # Line thickness
-=======
-    	addi $11, $0, 100        # Line length (in logical pixels)
-    	addi $12, $0, 0        # Initial position (logical column)
-    	addi $13, $0, 57       # Line position (logical row)
->>>>>>> e55adeac1ce973d217a4b21a4781de561b83a349
 
     # Calculate the starting address of the line
     
@@ -53,7 +47,6 @@
     	
 		for_horizontal:
 	
-<<<<<<< HEAD
     		beq $11, $0, config_row    # If length = 0, config_row
     		sw $10, 0($8)           	# Paint pixel with the line color
     		addi $8, $8, 4	     		# Increment the address by 4 (next logical pixel)
@@ -73,14 +66,6 @@
     			j for_vertical		# Continue the loop
 
 
-=======
-    	beq $11, $0, end        # If length is 0, exit
-    	sw $10, 0($8)           # Paint pixel with the line color
-    	addi $8, $8, 4	     # Increment the address by 4 (next logical pixel)
-    	addi $11, $11, -1       # Decrease the line length
-    	j for_horizontal        # Continue the loop
-
->>>>>>> e55adeac1ce973d217a4b21a4781de561b83a349
     # --- End ------------------------------------------------ #
 
 	end:
