@@ -29,11 +29,7 @@
     painter:					# Function to paint whatever 
     	
     	lui $8, 0x1001			# Base address of video memory
-    	# $4 = POSITION X ( addi $4, $0, 0)
-    	# $5 = POSITION Y ( addi $5, $0, 0)
-		# $6 = LENGTH     ( addi $6, $0, 0)
-    	# $7 = THICKNESS  ( addi $7, $0, 0)
-    	# $9 = COLOR (ori $9, $0, 0x000000)
+    	
     	add $10, $0, $6			# Storing the Line Length
     	addi $11, $0, 0			# Stating a Line Counter
     	
@@ -72,17 +68,41 @@
 # --- STARTERCODE ------------------------------------------------------------- # 
 
 	starter:
-	
+		# $4 = POSITION Y ( addi $4, $0, 0)
+    		# $5 = POSITION X ( addi $5, $0, 0)
+		# $6 = WIDTH     ( addi $6, $0, 0)
+    		# $7 = HEIGHT  ( addi $7, $0, 0)
+    		# $9 = COLOR (ori $9, $0, 0x000000)
+    	
 		jal paint_bg
 		
-		# ROUTE (0:57 - 68:79)
 		addi $4, $0, 57
 		addi $5, $0, 0
-		addi $6, $0, 68
-		addi $7, $0, 14
+		addi $6, $0, 51
+		addi $7, $0, 15
 		ori  $9, $0, 0x706535
 		jal painter
 		
+		addi $4, $0, 38
+		addi $5, $0, 72
+		addi $6, $0, 17
+		addi $7, $0, 34
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		addi $4, $0, 38
+		addi $5, $0, 20
+		addi $6, $0, 39
+		addi $7, $0, 16
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		addi $4, $0, 21
+		addi $5, $0, 20
+		addi $6, $0, 15
+		addi $7, $0, 18
+		ori  $9, $0, 0x706535
+		jal painter
 		
 		
 		j end
