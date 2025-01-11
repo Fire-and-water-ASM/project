@@ -34,7 +34,7 @@
     	addi $11, $0, 0			# Stating a Line Counter
     	
     	mul $4, $4, 1024		# X * Real_width (1024)
-    	mul $5, $5, 2			# Y * 2
+    	mul $5, $5, 4			# Y * 4
     	add $5, $5, $4			# Row + Column
     	add $8, $8, $5			# Starting address of the line 
     	
@@ -69,43 +69,176 @@
 
 	starter:
 		# $4 = POSITION Y ( addi $4, $0, 0)
-    		# $5 = POSITION X ( addi $5, $0, 0)
+    	# $5 = POSITION X ( addi $5, $0, 0)
 		# $6 = WIDTH     ( addi $6, $0, 0)
-    		# $7 = HEIGHT  ( addi $7, $0, 0)
-    		# $9 = COLOR (ori $9, $0, 0x000000)
+    	# $7 = HEIGHT  ( addi $7, $0, 0)
+    	# $9 = COLOR (ori $9, $0, 0x000000)
     	
 		jal paint_bg
 		
+		#0:57 - 68:71
 		addi $4, $0, 57
 		addi $5, $0, 0
-		addi $6, $0, 51
+		addi $6, $0, 68
 		addi $7, $0, 15
 		ori  $9, $0, 0x706535
 		jal painter
 		
-		addi $4, $0, 38
-		addi $5, $0, 72
-		addi $6, $0, 17
-		addi $7, $0, 34
+		#52:36 - 68:71
+		addi $4, $0, 36
+		addi $5, $0, 53
+		addi $6, $0, 15
+		addi $7, $0, 22
 		ori  $9, $0, 0x706535
 		jal painter
 		
-		addi $4, $0, 38
-		addi $5, $0, 20
-		addi $6, $0, 39
+		#13:36 - 51:51
+		addi $4, $0, 36
+		addi $5, $0, 13
+		addi $6, $0, 40
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#13:17 - 28:35
+		addi $4, $0, 17
+		addi $5, $0, 13
+		addi $6, $0, 15
+		addi $7, $0, 20
+		ori  $9, $0, 0x706535
+		jal painter
+
+		
+		#28:17 - 233:30
+		addi $4, $0, 17
+		addi $5, $0, 28
+		addi $6, $0, 204
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#74:31 - 88:46
+		addi $4, $0, 31
+		addi $5, $0, 74
+		addi $6, $0, 15
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#139:30 - 158:46
+		addi $4, $0, 30
+		addi $5, $0, 139
+		addi $6, $0, 15
+		addi $7, $0, 21
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#159:36 - 254:46
+		addi $4, $0, 36
+		addi $5, $0, 154
+		addi $6, $0, 97
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#239:20 - 254:35
+		addi $4, $0, 22
+		addi $5, $0, 236
+		addi $6, $0, 15
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#239:47 - 254:83
+		addi $4, $0, 47
+		addi $5, $0, 236
+		addi $6, $0, 15
+		addi $7, $0, 37
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#31:72 - 45:88
+		addi $4, $0, 71
+		addi $5, $0, 31
+		addi $6, $0, 15
 		addi $7, $0, 16
 		ori  $9, $0, 0x706535
 		jal painter
 		
-		addi $4, $0, 21
-		addi $5, $0, 20
-		addi $6, $0, 15
-		addi $7, $0, 18
+		#15:89 - 120:103
+		addi $4, $0, 86
+		addi $5, $0, 15
+		addi $6, $0, 105
+		addi $7, $0, 15
 		ori  $9, $0, 0x706535
 		jal painter
 		
+		#84:69 - 99:88
+		addi $4, $0, 69
+		addi $5, $0, 84
+		addi $6, $0, 15
+		addi $7, $0, 19
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#100:69 - 233:84
+		addi $4, $0, 69
+		addi $5, $0, 99
+		addi $6, $0, 133
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#126:84 - 141:103
+		addi $4, $0, 83
+		addi $5, $0, 126
+		addi $6, $0, 15
+		addi $7, $0, 19
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#210:84 - 224:88
+		addi $4, $0, 83
+		addi $5, $0, 210
+		addi $6, $0, 15
+		addi $7, $0, 5
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#142:89 - 250:103
+		addi $4, $0, 87
+		addi $5, $0, 141
+		addi $6, $0, 110
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#145:104 - 160:119
+		addi $4, $0, 101
+		addi $5, $0, 146
+		addi $6, $0, 15
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#193:104 - 210:122
+		addi $4, $0, 101
+		addi $5, $0, 193
+		addi $6, $0, 15
+		addi $7, $0, 20
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#211:109 - 228:122
+		addi $4, $0, 106
+		addi $5, $0, 208
+		addi $6, $0, 15
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
 		
 		j end
+		
 		
 # --- END --------------------------------------------------------------------- # 
 	
