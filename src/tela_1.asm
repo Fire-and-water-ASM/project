@@ -157,6 +157,13 @@
 		ori  $9, $0, 0x706535
 		jal painter
 		
+		addi $4, $0, 59
+		addi $5, $0, 251
+		addi $6, $0, 5
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
 		#31:72 - 45:88
 		addi $4, $0, 71
 		addi $5, $0, 31
@@ -235,6 +242,92 @@
 		addi $6, $0, 15
 		addi $7, $0, 15
 		ori  $9, $0, 0x706535
+		jal painter
+		
+		#Walls
+
+		addi $4, $0, 54
+		addi $5, $0, 0
+		addi $6, $0, 53
+		addi $7, $0, 3
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 50
+		addi $5, $0, 50
+		addi $6, $0, 3
+		addi $7, $0, 5
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 50
+		addi $5, $0, 13
+		addi $6, $0, 38
+		addi $7, $0, 3
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 17
+		addi $5, $0, 10
+		addi $6, $0, 3
+		addi $7, $0, 36
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 15
+		addi $5, $0, 10
+		addi $6, $0, 222
+		addi $7, $0, 3
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 15
+		addi $5, $0, 232
+		addi $6, $0, 4
+		addi $7, $0, 17
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 20
+		addi $5, $0, 236
+		addi $6, $0, 15
+		addi $7, $0, 3
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 20
+		addi $5, $0, 251
+		addi $6, $0, 3
+		addi $7, $0, 40
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 73
+		addi $5, $0, 251
+		addi $6, $0, 3
+		addi $7, $0, 10
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 82
+		addi $5, $0, 236
+		addi $6, $0, 18
+		addi $7, $0, 6
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 50
+		addi $5, $0, 232
+		addi $6, $0, 4
+		addi $7, $0, 38
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 54
+		addi $5, $0, 0
+		addi $6, $0, 53
+		addi $7, $0, 3
+		ori  $9, $0, 0x191b03
 		jal painter
 		
 		j end
