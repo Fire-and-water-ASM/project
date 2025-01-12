@@ -38,7 +38,7 @@
     	addi $11, $0, 0			# Stating a Line Counter
     	
     	mul $4, $4, 1024		# X * Real_width (1024)
-    	mul $5, $5, 2			# Y * 2
+    	mul $5, $5, 4			# Y * 4
     	add $5, $5, $4			# Row + Column
     	add $8, $8, $5			# Starting address of the line 
     	
@@ -75,13 +75,102 @@
 	
 		jal paint_bg
 		
-		# ROUTE (0:57 - 68:79)
-		addi $4, $0, 57
+		#(0:59 - 41:73)
+		addi $4, $0, 59
 		addi $5, $0, 0
-		addi $6, $0, 68
-		addi $7, $0, 14
+		addi $6, $0, 41
+		addi $7, $0, 15
 		ori  $9, $0, 0x706535
 		jal painter
+		
+		#(27:39 - 41:58)
+		addi $4, $0, 41
+		addi $5, $0, 26
+		addi $6, $0, 15
+		addi $7, $0, 19
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#(8:39 - 26:53)
+		addi $4, $0, 41
+		addi $5, $0, 8
+		addi $6, $0, 20
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#(8:20 - 22:38)
+		addi $4, $0, 22
+		addi $5, $0, 8
+		addi $6, $0, 15
+		addi $7, $0, 20
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#(0:59 - 41:73)
+		addi $4, $0, 8
+		addi $5, $0, 8
+		addi $6, $0, 15
+		addi $7, $0, 15
+		ori  $9, $0, 0x8D8044
+		jal painter
+		
+		#(23:20 - 104:34)
+		addi $4, $0, 22
+		addi $5, $0, 23
+		addi $6, $0, 81
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#(90:35 - 104:55)
+		addi $4, $0, 35
+		addi $5, $0, 89
+		addi $6, $0, 15
+		addi $7, $0, 20
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#(105:41)
+		addi $4, $0, 40
+		addi $5, $0, 104
+		addi $6, $0, 40
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#(109:26)
+		addi $4, $0, 26
+		addi $5, $0, 109
+		addi $6, $0, 15
+		addi $7, $0, 15
+		ori  $9, $0, 0x8D8044
+		jal painter
+		
+		#(128:19 - 142:40)
+		addi $4, $0, 22
+		addi $5, $0, 129
+		addi $6, $0, 15
+		addi $7, $0, 19
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		#(143:19 - 196:33)
+		addi $4, $0, 22
+		addi $5, $0, 143
+		addi $6, $0, 53
+		addi $7, $0, 15
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		addi $4, $0, 22
+		addi $5, $0, 196
+		addi $6, $0, 15
+		addi $7, $0, 15
+		ori  $9, $0, 0x8D8044
+		jal painter
+		
+		
 		
 		
 		
