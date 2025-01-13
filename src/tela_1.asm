@@ -633,6 +633,30 @@
 		ori  $9, $0, 0x191b03
 		jal painter
 		
+		# Path between Route 1 and 2
+		addi $4, $0, 50
+		addi $5, $0, 180
+		addi $6, $0, 15
+		addi $7, $0, 23
+		ori  $9, $0, 0x706535
+		jal painter
+		
+		addi $4, $0, 50
+		addi $5, $0, 177
+		addi $6, $0, 3
+		addi $7, $0, 20
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		addi $4, $0, 50
+		addi $5, $0, 195
+		addi $6, $0, 3
+		addi $7, $0, 20
+		ori  $9, $0, 0x191b03
+		jal painter
+		
+		
+		
 		j end
 		
 		
