@@ -1,11 +1,170 @@
-.text 
-	
-	main: 
+
+    
+.text  
+main:
 		
 		j starter
+
+fb_pixels:
+	
+    sub $sp, $sp, 234       # Aloca espaço para 32 pares (32 * 2 palavras = 64 bytes)
+
+    # Armazena os pares (x, y)
+    li $t0, 1              # x1
+    li $t1, 59             # y1
+    sw $t0, 0($sp)         # Armazena x1
+    sw $t1, 4($sp)         # Armazena y1
+
+    li $t0, 3              # x2
+    li $t1, 59             # y2
+    sw $t0, 8($sp)         # Armazena x2
+    sw $t1, 12($sp)        # Armazena y2
+
+    li $t0, 4              # x3
+    li $t1, 59             # y3
+    sw $t0, 16($sp)        # Armazena x3
+    sw $t1, 20($sp)        # Armazena y3
+
+    li $t0, 5              # x4
+    li $t1, 59             # y4
+    sw $t0, 24($sp)        # Armazena x4
+    sw $t1, 28($sp)        # Armazena y4
+
+    li $t0, 7              # x5
+    li $t1, 59             # y5
+    sw $t0, 32($sp)        # Armazena x5
+    sw $t1, 36($sp)        # Armazena y5
+
+    li $t0, 2              # x6
+    li $t1, 60             # y6
+    sw $t0, 40($sp)        # Armazena x6
+    sw $t1, 44($sp)        # Armazena y6
+
+    li $t0, 4              # x7
+    li $t1, 60             # y7
+    sw $t0, 48($sp)        # Armazena x7
+    sw $t1, 52($sp)        # Armazena y7
+
+    li $t0, 6              # x8
+    li $t1, 60             # y8
+    sw $t0, 56($sp)        # Armazena x8
+    sw $t1, 60($sp)        # Armazena y8
+
+    li $t0, 2              # x9
+    li $t1, 61             # y9
+    sw $t0, 64($sp)        # Armazena x9
+    sw $t1, 68($sp)        # Armazena y9
+
+    li $t0, 3              # x10
+    li $t1, 61             # y10
+    sw $t0, 72($sp)        # Armazena x10
+    sw $t1, 76($sp)        # Armazena y10
+
+    li $t0, 4              # x11
+    li $t1, 61             # y11
+    sw $t0, 80($sp)        # Armazena x11
+    sw $t1, 84($sp)        # Armazena y11
+
+    li $t0, 5              # x12
+    li $t1, 61             # y12
+    sw $t0, 88($sp)        # Armazena x12
+    sw $t1, 92($sp)        # Armazena y12
+
+    li $t0, 6              # x13
+    li $t1, 61             # y13
+    sw $t0, 96($sp)        # Armazena x13
+    sw $t1, 100($sp)       # Armazena y13
+
+    li $t0, 3              # x14
+    li $t1, 62             # y14
+    sw $t0, 104($sp)       # Armazena x14
+    sw $t1, 108($sp)       # Armazena y14
+
+    li $t0, 4              # x15
+    li $t1, 62             # y15
+    sw $t0, 112($sp)       # Armazena x15
+    sw $t1, 116($sp)       # Armazena y15
+
+    li $t0, 5              # x16
+    li $t1, 62             # y16
+    sw $t0, 120($sp)       # Armazena x16
+    sw $t1, 124($sp)       # Armazena y16
+
+    li $t0, 4              # x17
+    li $t1, 63             # y17
+    sw $t0, 128($sp)       # Armazena x17
+    sw $t1, 132($sp)       # Armazena y17
+
+    li $t0, 3              # x18
+    li $t1, 64             # y18
+    sw $t0, 136($sp)       # Armazena x18
+    sw $t1, 140($sp)       # Armazena y18
+
+    li $t0, 4              # x19
+    li $t1, 64             # y19
+    sw $t0, 144($sp)       # Armazena x19
+    sw $t1, 148($sp)       # Armazena y19
+
+    li $t0, 5              # x20
+    li $t1, 64             # y20
+    sw $t0, 152($sp)       # Armazena x20
+    sw $t1, 156($sp)       # Armazena y20
+
+    li $t0, 2              # x21
+    li $t1, 65             # y21
+    sw $t0, 160($sp)       # Armazena x21
+    sw $t1, 164($sp)       # Armazena y21
+
+    li $t0, 4              # x22
+    li $t1, 65             # y22
+    sw $t0, 168($sp)       # Armazena x22
+    sw $t1, 172($sp)       # Armazena y22
+
+    li $t0, 6              # x23
+    li $t1, 65             # y23
+    sw $t0, 176($sp)       # Armazena x23
+    sw $t1, 180($sp)       # Armazena y23
+
+    li $t0, 4              # x24
+    li $t1, 66             # y24
+    sw $t0, 184($sp)       # Armazena x24
+    sw $t1, 188($sp)       # Armazena y24
+
+    li $t0, 3              # x25
+    li $t1, 67             # y25
+    sw $t0, 192($sp)       # Armazena x25
+    sw $t1, 196($sp)       # Armazena y25
+
+    li $t0, 5              # x26
+    li $t1, 67             # y26
+    sw $t0, 200($sp)       # Armazena x26
+    sw $t1, 204($sp)       # Armazena y26
+
+    li $t0, 3              # x27
+    li $t1, 68             # y27
+    sw $t0, 208($sp)       # Armazena x27
+    sw $t1, 212($sp)       # Armazena y27
+
+    li $t0, 5              # x28
+    li $t1, 68             # y28
+    sw $t0, 216($sp)       # Armazena x28
+    sw $t1, 220($sp)       # Armazena y28
+    
+    li $t0, 3
+    li $t1, 60
+    sw $t0, 224($sp)
+    sw $t1, 226($sp)
+    
+    li $t0, 5
+    li $t1, 60
+    sw $t0, 230($sp)
+    sw $t1, 234($sp)
+    
+    j paint_fb
+			
 	
 # --- FUNCTIONS --------------------------------------------------------------- #
-	
+		
 	paint_bg:						# Function to paint the background
 		
 		lui $8, 0x1001				# Base address of video memory
@@ -63,8 +222,32 @@
     	end_painter:
     		
     		jr $ra	# Return to the function call
-    			
-
+    	
+    paint_fb:
+    	lui $8, 0x1001
+    	ori $9, 0xff0000
+    	ori $10, 0xff8900
+    	addi $11, $0, 56
+    	
+    	paint_body_fb:
+    		beq $11, $0, end_fb
+    		lw $12, 0($sp)
+    		addi $sp, $sp, 4
+    		lw $13, 0($sp)
+    		addi $sp, $sp, 4
+    		mult $13, $12
+    		mul $13, $13, 4
+    		
+    		add $8, $8, $13
+    		sw $9, 0($8)
+    		
+    		addi $11, $11, -1
+  			j paint_body_fb
+    	
+    	end_fb:
+    		jr $ra
+    
+    
 # --- STARTERCODE ------------------------------------------------------------- # 
 
 	starter:
@@ -655,8 +838,8 @@
 		ori  $9, $0, 0x191b03
 		jal painter
 		
-		
-		
+		jal fb_pixels
+
 		j end
 		
 		
