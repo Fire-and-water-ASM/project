@@ -60,47 +60,50 @@
     				addi $11, $0, 0			# Resetting the $11
     				j for_vertical
  
-    	
-    store_fb_body:
-    
-    	addi $10, $0, 5 # counter (5)
-    	
-    	store_fb_body_for:
-    	
-    		beq $10, $0, return
-    		addi $sp, $sp, -20 # ( 5 [address] * 4 [unity])
-    		sw $11, 0($sp)
-    		sw $12, 4($sp)
-    		sw $13, 8($sp)
-    		sw $14, 12($sp)
-    		sw $15, 16($sp)
-    		
-    		addi $sp, $sp, 16
-    		addi $10, $10, -5
- 	 		j store_fb_body_for
- 	 			  	
-    paint_fb_body:
-    
-    	ori $9, $0, 0xff0000
-        addi $10, $0, 30 # counter
-    
-    	paint_fb_body_for:
-    	
-    		beq $10, $0, return
-    		lui $8, 0x1001
-    		lw $11, 0($sp)
-    		add $8, $8, $11
-    		sw $9, 0($8)
-    	
-    		addi $sp, $sp, 4
-    		addi $10, $10, -1
-    		j paint_fb_body_for
-    		
-    		
-    		
-    		
-    		
-    
+	store_fb_body:
+	
+		addi $sp, $sp, -20
+		sw $15, 0($sp)
+		sw $14, 4($sp)
+		sw $13, 8($sp)
+		sw $12, 12($sp)
+		sw $11, 16($sp)
+		jr $ra
+		
+	paint_fb_body:
+		
+		ori $9, $0, 0x0000ff
+		
+		addi $10, $0, 30
+		
+		paint_body:
+			
+			beq $10, $0, return
+			lui $8, 0x1001
+			lw $11, 0($sp)
+			add $8, $8, $11
+			sw $9, 0($8)
+			addi $sp, $sp, 4
+			addi $10, $10, -1
+			j paint_body
+	
+	store_wg_body:
+	
+		addi $sp, $sp, -20
+		sw $15, 0($sp)
+		sw $14, 4($sp)
+		sw $13, 8($sp)
+		sw $12, 12($sp)
+		sw $11, 16($sp)
+		jr $ra
+	
+	paint_wg_body:
+	
+		ori $9, $0, 0xff0000
+		addi $10, $0, 30
+		
+		j paint_body
+      
     
 # --- STARTERCODE ------------------------------------------------------------- # 
 
@@ -734,10 +737,53 @@
     	addi $14, $0, 69644
     	addi $15, $0, 69652
     	jal store_fb_body
+    	
+	    	#water girl
+	    	
+		addi $11, $0, 63532  
+		addi $12, $0, 60468  
+		addi $13, $0, 60472  
+		addi $14, $0, 60476  
+		addi $15, $0, 63556 
+		jal store_wg_body
 	
+		addi $11, $0, 61488  
+		addi $12, $0, 61492  
+		addi $13, $0, 61496  
+		addi $14, $0, 61500 
+		addi $15, $0, 61504 
+		jal store_wg_body
 	
+		addi $11, $0, 62512 
+		addi $12, $0, 62516  
+		addi $13, $0, 62520  
+		addi $14, $0, 62524  
+		addi $15, $0, 62528  
+		jal store_wg_body
+
+		addi $11, $0, 63540  
+		addi $12, $0, 63544  
+		addi $13, $0, 63548  
+		addi $14, $0, 64568  
+		addi $15, $0, 65588  
+		jal store_wg_body
+
+		addi $11, $0, 65592 
+		addi $12, $0, 65596 
+		addi $13, $0, 66608 
+		addi $14, $0, 66616 
+		addi $15, $0, 66624 
+		jal store_wg_body
+		
+		addi $11, $0, 67640  
+		addi $12, $0, 68660  
+		addi $13, $0, 68668  
+		addi $14, $0, 69684 
+		addi $15, $0, 69692 
+		jal store_wg_body
 	
 		jal paint_fb_body
+		jal paint_wg_body
 	
 		j end
 		
