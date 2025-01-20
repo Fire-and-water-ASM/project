@@ -13,7 +13,6 @@
 		ori $10, $0, 0x2b3205		# Background color (#2B3205)
 		
 		paint_bg_px:
-		
 			beq $9, $0, return 		# Label to return to the function call
 			sw $10, 0($8)			# Paint pixel with background color
     		addi $8, $8, 4			# Increment the address by 4 (next pixel)
@@ -103,8 +102,9 @@
 		addi $10, $0, 30
 		
 		j paint_body
-      
-    
+		
+	
+		
 # --- STARTERCODE ------------------------------------------------------------- # 
 
 	starter:
@@ -113,8 +113,2179 @@
 		# $6 = WIDTH     ( addi $6, $0, 0)
     	# $7 = HEIGHT  ( addi $7, $0, 0)
     	# $9 = COLOR (ori $9, $0, 0x000000)
-    	
-		jal paint_bg
+    		jal paint_bg
+    		
+    		addi $4, $0, 4
+		addi $5, $0, 4
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 24
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 44
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 64
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 84
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 104
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 124
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 144
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 164
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 184
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 204
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		addi $4, $0, 4
+		addi $5, $0, 224
+		addi $6, $0, 16
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+
+		
+				    # Primeiro bloco
+  # Primeiro bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Segundo bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Terceiro bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Quarto bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Quinto bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Sexto bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Sétimo bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Oitavo bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Nono bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Décimo bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Décimo primeiro bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    # Décimo segundo bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     # Primeiro bloco
+    addi $4, $0, 20        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 20        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+    addi $4, $0, 20        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+    addi $4, $0, 28        # Posição Y
+    addi $5, $0, 4       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+ addi $4, $0, 28        # Posição Y
+    addi $5, $0, 4       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 28        # Posição Y
+    addi $5, $0, 24       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 28        # Posição Y
+    addi $5, $0, 44       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+	addi $4, $0, 28        # Posição Y
+    addi $5, $0, 64       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter,
+    
+    addi $4, $0, 28        # Posição Y
+    addi $5, $0, 84       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 28        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 28        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 28        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+         addi $4, $0, 28        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+          addi $4, $0, 28        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+       addi $4, $0, 28        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+         addi $4, $0, 28        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 36        # Posição Y
+    addi $5, $0, 4       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 36        # Posição Y
+    addi $5, $0, 24       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+    addi $4, $0, 36        # Posição Y
+    addi $5, $0, 44       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+       addi $4, $0, 36        # Posição Y
+    addi $5, $0, 64       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 36        # Posição Y
+    addi $5, $0, 84       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+    addi $4, $0, 36        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 36        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 36        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 36        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+  addi $4, $0, 36        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+  addi $4, $0, 36        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 36        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 44        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 44        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 52        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 52        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 60        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 60        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 60        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 68        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 68        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 68        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 76        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 76        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 76        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 84        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 84        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 84        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 92        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 92        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 92        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 100        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 100        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 100        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 108        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 108        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 108        # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 116       # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 116       # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 116       # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 124       # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+        addi $4, $0, 124       # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 24        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 44        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 64        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 84        # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 104       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 124       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 144       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 164       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 184       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 204       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+
+    addi $4, $0, 124       # Posição Y
+    addi $5, $0, 224       # Posição X
+    addi $6, $0, 16        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+    addi $4, $0, 4       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+       addi $4, $0, 12       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 20       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 28       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 32       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+		
+		
+ addi $4, $0, 40       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 48       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 56       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 64       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+     addi $4, $0, 72       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 80       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 88       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 96       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 104       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+      addi $4, $0, 112       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
+    
+    addi $4, $0, 120       # Posição Y
+    addi $5, $0, 244       # Posição X
+    addi $6, $0, 8        # Altura do bloco
+    addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
 		
 		#0:57 - 68:71
 		addi $4, $0, 57
