@@ -103,6 +103,193 @@
 		
 		j paint_body
 		
+		
+	paint_fire_ball:
+	
+		# first layer
+	
+		addi $4, $0, 17
+		add $5, $0,  460
+		addi $6, $0, 8
+		addi $7, $0, 12
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		addi $4, $0, 18
+		addi $5, $0, 459
+		addi $6, $0, 1
+		addi $7, $0, 10
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		addi $4, $0, 19
+		addi $5, $0, 458
+		addi $6, $0, 1
+		addi $7, $0, 8
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		
+		addi $4, $0, 18
+		addi $5, $0, 468
+		addi $6, $0, 2
+		addi $7, $0, 10
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		addi $4, $0, 19
+		addi $5, $0, 470
+		addi $6, $0, 2
+		addi $7, $0, 8
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		addi $4, $0, 20
+		addi $5, $0, 472
+		addi $6, $0, 2
+		addi $7, $0, 6
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		addi $4, $0, 21
+		addi $5, $0, 474
+		addi $6, $0, 2
+		addi $7, $0, 4
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		addi $4, $0, 22
+		addi $5, $0, 476
+		addi $6, $0, 2
+		addi $7, $0, 2
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		addi $4, $0, 23
+		addi $5, $0, 478
+		addi $6, $0, 1
+		addi $7, $0, 1
+		ori  $9, $0, 0xFA0100
+		jal painter
+		
+		# Second layer
+		
+		
+		addi $4, $0, 18
+		addi $5, $0, 460
+		addi $6, $0, 8
+		addi $7, $0, 10
+		ori  $9, $0, 0xF94723
+		jal painter
+		
+		addi $4, $0, 19
+		addi $5, $0, 459
+		addi $6, $0, 1
+		addi $7, $0, 8
+		ori  $9, $0, 0xF94723
+		jal painter
+		
+		addi $4, $0, 19
+		addi $5, $0, 468
+		addi $6, $0, 2
+		addi $7, $0, 8
+		ori  $9, $0, 0xF94723
+		jal painter
+	
+		
+		addi $4, $0, 20
+		addi $5, $0, 470
+		addi $6, $0, 2
+		addi $7, $0, 6
+		ori  $9, $0, 0xF94723
+		jal painter
+		
+		addi $4, $0, 21
+		addi $5, $0, 472
+		addi $6, $0, 2
+		addi $7, $0, 4
+		ori  $9, $0, 0xF94723
+		jal painter
+		
+		addi $4, $0, 22
+		addi $5, $0, 475
+		addi $6, $0, 1
+		addi $7, $0, 2
+		ori  $9, $0, 0xF94723
+		jal painter
+		
+		# three layer
+		
+		addi $4, $0, 19
+		addi $5, $0, 460
+		addi $6, $0, 8
+		addi $7, $0, 8
+		ori  $9, $0, 0xFAAB34
+		jal painter
+		
+		addi $4, $0, 20
+		addi $5, $0, 459
+		addi $6, $0, 1
+		addi $7, $0, 6
+		ori  $9, $0, 0xFAAB34
+		jal painter
+		
+		addi $4, $0, 20
+		addi $5, $0, 468
+		addi $6, $0, 2
+		addi $7, $0, 6
+		ori  $9, $0, 0xFAAB34
+		jal painter
+	
+		
+		addi $4, $0, 21
+		addi $5, $0, 470
+		addi $6, $0, 2
+		addi $7, $0, 4
+		ori  $9, $0, 0xFAAB34 
+		jal painter
+		
+		addi $4, $0, 22
+		addi $5, $0, 472
+		addi $6, $0, 3
+		addi $7, $0, 2
+		ori  $9, $0, 0xFAAB34
+		jal painter
+		
+		# four layer
+		
+		addi $4, $0, 20
+		addi $5, $0, 462
+		addi $6, $0, 6
+		addi $7, $0, 6
+		ori  $9, $0, 0xFAE846
+		jal painter
+		
+		addi $4, $0, 21
+		addi $5, $0, 461
+		addi $6, $0, 1
+		addi $7, $0, 4 
+		ori  $9, $0, 0xFAE846
+		jal painter
+		
+		addi $4, $0, 21
+		addi $5, $0, 468
+		addi $6, $0, 2
+		addi $7, $0, 4
+		ori  $9, $0, 0xFAE846
+		jal painter
+	
+		
+		addi $4, $0, 22
+		addi $5, $0, 470
+		addi $6, $0, 2
+		addi $7, $0, 2
+		ori  $9, $0, 0xFAE846 
+		jal painter
+		
+		
+		jr $ra
+		
 	
 		
 # --- STARTERCODE ------------------------------------------------------------- # 
@@ -114,13 +301,6 @@
     	# $7 = HEIGHT  ( addi $7, $0, 0)
     	# $9 = COLOR (ori $9, $0, 0x000000)
     		jal paint_bg
-    		
-    		addi $4, $0, 4
-		addi $5, $0, 4
-		addi $6, $0, 16
-		addi $7, $0, 6
-		ori  $9, $0, 0x5a660f
-		jal painter
 		
 		addi $4, $0, 4
 		addi $5, $0, 24
@@ -2955,6 +3135,16 @@
 	
 		jal paint_fb_body
 		jal paint_wg_body
+		
+		addi $4, $0, 4
+		addi $5, $0, 4
+		addi $6, $0, 16	
+		addi $7, $0, 6
+		ori  $9, $0, 0x5a660f
+		jal painter
+		
+		jal paint_fire_ball
+    		jr $ra
 	
 		j end
 		
