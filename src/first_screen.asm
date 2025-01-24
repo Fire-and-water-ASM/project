@@ -113,9 +113,10 @@
 		# $6 = WIDTH     ( addi $6, $0, 0)
     	# $7 = HEIGHT  ( addi $7, $0, 0)
     	# $9 = COLOR (ori $9, $0, 0x000000)
-    		jal paint_bg
+    	
+    	jal paint_bg
     		
-    		addi $4, $0, 4
+    	addi $4, $0, 4
 		addi $5, $0, 4
 		addi $6, $0, 16
 		addi $7, $0, 6
@@ -200,7 +201,6 @@
 		jal painter
 
 		
-				    # Primeiro bloco
   # Primeiro bloco
     addi $4, $0, 12        # Posição Y
     addi $5, $0, 4         # Posição X
@@ -2719,7 +2719,7 @@
 		jal painter
 		
 		addi $4, $0, 85
-		addi $5, $0, 115
+		addi $5, $0, 114
 		addi $6, $0, 3
 		addi $7, $0, 18
 		ori  $9, $0, 0x191b03
