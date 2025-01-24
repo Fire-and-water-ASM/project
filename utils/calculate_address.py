@@ -21,6 +21,7 @@ def main():
         print('\n\nResults:')
         for i in array:
             print(i)
-        time.sleep(180)
+        print('\n\n\n')
+        main()
         
 main()
