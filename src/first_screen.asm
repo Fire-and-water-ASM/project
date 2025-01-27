@@ -2736,7 +2736,7 @@
 		jal painter
 		
 		addi $4, $0, 85
-		addi $5, $0, 115
+		addi $5, $0, 114
 		addi $6, $0, 3
 		addi $7, $0, 18
 		ori  $9, $0, 0x191b03
