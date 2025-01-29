@@ -2,16 +2,19 @@
 
 	main:
 		
-		j starter
+		j paint_bg
 	
 # --- FUNCTIONS --------------------------------------------------------------- #
 
 	timer:
-		addi $16, $0, 500000
+		addi $16, $0, 200000
+		nop
 		timer_for:
+		nop
 		beq $16, $0, return
 		addi $16, $16, -1
 		j timer_for
+		nop
 				
 	paint_bg:						# Function to paint the background
 		
@@ -3155,6 +3158,36 @@
         
         
         
+
+        
+    
+		jal timer
+		addi $20, $20, 0
+		addi $21, $21, -10
+		jal paint_waterball
+		jal timer
+		addi $20, $20, 0
+		addi $21, $21, -10
+		jal timer
+		jal paint_waterball
+		jal timer
+		addi $20, $20, 0
+		addi $21, $21, -10
+		jal paint_waterball
+
+		jal paint_fb_body
+		jal paint_wg_body
+		j end
+		
+		
+# --- END --------------------------------------------------------------------- # 
+	
+	end: 
+	
+		addi $2, $0, 10
+		syscall
+
+
          # first layer
         paint_waterball:
         	
@@ -3332,24 +3365,11 @@
         ori  $9, $0, 0xBCE2FC
         jal painter
         
-          addi $4, $20, 75
+        addi $4, $20, 75
         addi $5, $21, 222
         addi $6, $0, 2
         addi $7, $0, 2
         ori  $9, $0, 0xBCE2FC
         jal painter
-
-
-		jal paint_fb_body
-		jal paint_wg_body
-		j end
 		
-		
-# --- END --------------------------------------------------------------------- # 
-	
-	end: 
-	
-		addi $2, $0, 10
-		syscall
-
-		
+		jr $ra
