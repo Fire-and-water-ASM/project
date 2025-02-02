@@ -795,6 +795,126 @@ start:
 		addi $18, $0, 180
 		addi $19, $0, 100
 		
+paint_fireboy:
+       	
+       	addi $4, $22, 63
+    	addi $5, $23, 20
+    	addi $6, $0, 4
+    	addi $7, $0, 5
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	  	
+       	addi $4, $22, 64
+    	addi $5, $23, 19
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	 	  	
+       	addi $4, $22, 65
+    	addi $5, $23, 18
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	 addi $4, $22, 64
+    	addi $5, $23, 23
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	 	  	
+       	addi $4, $22, 65
+    	addi $5, $23, 24
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	  	  	
+       	addi $4, $22, 67
+    	addi $5, $23, 20
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	addi $4, $22, 68
+    	addi $5, $23, 19
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	 addi $4, $22, 67
+    	addi $5, $23, 23
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	addi $4, $22, 68 
+    	addi $5, $23, 24
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	 
+       	addi $4, $22, 62
+    	addi $5, $23, 21
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	 addi $4, $22, 58
+    	addi $5, $23, 20
+    	addi $6, $0, 4
+    	addi $7, $0, 5
+    	ori  $9, $0, 0xf91111
+   	 jal painter
+   	 
+   	addi $4, $22, 58
+    	addi $5, $23,20
+    	addi $6, $0, 1
+    	addi $7, $0, 3 
+    	ori  $9, $0, 0xeede48
+   	 jal painter
+   	 
+   	 addi $4, $22, 58
+    	addi $5, $23,20
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xeede48
+   	 jal painter
+   	 
+   	  addi $4, $22, 57
+    	addi $5, $23,22
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xeede48
+   	 jal painter
+   	 
+   	 addi $4, $22, 59
+    	addi $5, $23,23
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0x000000
+   	 jal painter
+   	 
+   	  addi $4, $22, 59
+    	addi $5, $23,21
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0x000000
+   	 jal painter
+		
+		
 reset_fireball:
 
     addi $4, $20, 17
@@ -1506,7 +1626,7 @@ paint_waterball:
     addi $7, $0, 2
     ori  $9, $0, 0xBCE2FC
     jal painter
-
+    
 # Movimento da bola de fogo
 beq $18, $0, fireball_set   # Se $18 for 0, configura a bola de fogo
 addi $18, $18, -1            # Caso contrário, decrementa $18
@@ -1528,6 +1648,7 @@ mul $17, $17, -1             # Inverte a direção da bola de água
 j reset_waterball            # Vai para reset da bola de água
 
         
+       		
 end:
 	addi $2, $0, 10
 	syscall
