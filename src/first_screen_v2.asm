@@ -1049,7 +1049,67 @@ paint_fireboy:
    	 jal painter
    	 
    	 
-		
+	fire_barrier:
+	
+	addi $4, $22, 36
+    	addi $5, $23,230 
+    	addi $6, $0, 3
+    	addi $7, $0, 15 
+    	ori  $9, $0, 0xFA0100
+   	 jal painter 
+   	 
+   	 addi $4, $22, 36
+    	addi $5, $23,230 
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0xFAE846
+   	 jal painter 
+   	 
+   	  addi $4, $22, 38
+    	addi $5, $23,232  
+    	addi $6, $0, 1
+    	addi $7, $0, 11
+    	ori  $9, $0, 0xFAE846
+   	 jal painter 
+   	 
+   	   addi $4, $22, 48 
+    	addi $5, $23,231 
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0xFAE846
+   	 jal painter 
+   	 
+   	 
+   	 
+   	 water_barrier:
+	
+	addi $4, $22, 87
+    	addi $5, $23,230 
+    	addi $6, $0, 3
+    	addi $7, $0, 15 
+    	ori  $9, $0, 0x0195FF
+   	 jal painter 
+   	 
+   	 addi $4, $22, 87 
+    	addi $5, $23,230 
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0xBCE2FC
+   	 jal painter 
+   	 
+   	  addi $4, $22, 89
+    	addi $5, $23,232  
+    	addi $6, $0, 1
+    	addi $7, $0, 11
+    	ori  $9, $0, 0xBCE2FC
+   	 jal painter 
+   	 
+   	   addi $4, $22, 99
+    	addi $5, $23,231 
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0xBCE2FC
+   	 jal painter 
 		
 reset_fireball:
 
