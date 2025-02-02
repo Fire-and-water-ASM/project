@@ -913,6 +913,142 @@ paint_fireboy:
     	addi $7, $0, 3
     	ori  $9, $0, 0x000000
    	 jal painter
+   	 
+   	 
+   	 paint_watergirl:
+       	
+       	addi $4, $22, 63
+    	addi $5, $23, 8
+    	addi $6, $0, 4
+    	addi $7, $0, 5
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	  	
+       	addi $4, $22, 64
+    	addi $5, $23, 7
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	 	  	
+       	addi $4, $22, 65
+    	addi $5, $23, 6
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	 addi $4, $22, 64
+    	addi $5, $23, 11
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	 	  	
+       	addi $4, $22, 65
+    	addi $5, $23, 12
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	  	  	
+       	addi $4, $22, 67
+    	addi $5, $23, 8
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4 
+   	 jal painter
+   	 
+   	addi $4, $22, 68
+    	addi $5, $23, 7 
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	 addi $4, $22, 67
+    	addi $5, $23, 11
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	addi $4, $22, 68 
+    	addi $5, $23, 12
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	 
+       	addi $4, $22, 62
+    	addi $5, $23, 9
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	 addi $4, $22, 58
+    	addi $5, $23, 8
+    	addi $6, $0, 4
+    	addi $7, $0, 5
+    	ori  $9, $0, 0x1195f4
+   	 jal painter
+   	 
+   	 addi $4, $22, 57
+    	addi $5, $23, 7
+    	addi $6, $0, 6
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xbae2fc
+   	 jal painter
+   	 
+   	addi $4, $22, 57
+    	addi $5, $23, 7
+    	addi $6, $0, 2
+    	addi $7, $0, 3
+    	ori  $9, $0, 0xbae2fc
+   	 jal painter
+   	 
+   	addi $4, $22, 59
+    	addi $5, $23, 6
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xbae2fc
+   	 jal painter
+   	 
+   	 addi $4, $22, 60
+    	addi $5, $23, 5
+    	addi $6, $0, 2
+    	addi $7, $0, 2
+    	ori  $9, $0, 0xbae2fc
+   	 jal painter
+   	 
+   	  addi $4, $22, 58
+    	addi $5, $23, 12
+    	addi $6, $0, 2
+    	addi $7, $0, 3
+    	ori  $9, $0, 0xbae2fc
+   	 jal painter
+   	 
+   	 addi $4, $22, 59 
+    	addi $5, $23,11
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0x000000
+   	 jal painter
+   	 
+   	  addi $4, $22, 59
+    	addi $5, $23,9
+    	addi $6, $0, 1
+    	addi $7, $0, 3
+    	ori  $9, $0, 0x000000
+   	 jal painter
+   	 
+   	 
 		
 		
 reset_fireball:
