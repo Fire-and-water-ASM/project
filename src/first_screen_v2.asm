@@ -1112,8 +1112,10 @@ paint_fireboy:
    	 jal painter
    	 
    	 # reseting values to paint fireball and waterball
-   	 addi $18, $0, 90
-   	 addi $19, $0, 60
+   	 addi $18, $0, 140
+   	 addi $19, $0, 100
+   	 addi $16, $0, -1
+   	 addi $17, $0, -1
 		
 reset_fireball:
 
@@ -1644,8 +1646,8 @@ reset_waterball:
     ori  $9, $0, 0x706535
     jal painter
      
-     add $23, $23, $17	
-                     
+     add $23, $23, $17
+     
 paint_waterball:
     
     addi $4, $22, 71
@@ -1828,24 +1830,20 @@ paint_waterball:
     jal painter
     
     beq $18, $0, set_fireball
-    add $21, $21, $16
     addi $18, $18, -1
     
     beq $19, $0, set_waterball
-    add $23, $23, $17
-    add $19, $19, -1
+    add $19, $19, -1 
     
     j reset_fireball
     
     set_fireball:
-    	addi $18, $0, 90
+    	addi $18, $0, 140
     	mul $16, $16, -1
-    	addi $2, $0, 1
-    	add $4, $0, $16
-    	syscall
     	j reset_fireball
+    	
     set_waterball:
-    	addi $19, $0, 60
+    	addi $19, $0, 100
     	mul $17, $17, -1
     	j reset_fireball
     
