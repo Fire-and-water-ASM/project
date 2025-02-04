@@ -1109,7 +1109,11 @@ paint_fireboy:
     	addi $6, $0, 1
     	addi $7, $0, 3
     	ori  $9, $0, 0xBCE2FC
-   	 jal painter 
+   	 jal painter
+   	 
+   	 # reseting values to paint fireball and waterball
+   	 addi $18, $0, 90
+   	 addi $19, $0, 60
 		
 reset_fireball:
 
@@ -1823,26 +1827,28 @@ paint_waterball:
     ori  $9, $0, 0xBCE2FC
     jal painter
     
-# Movimento da bola de fogo
-beq $18, $0, fireball_set   # Se $18 for 0, configura a bola de fogo
-addi $18, $18, -1            # Caso contrário, decrementa $18
-j see_water                  # Vai para verificação da bola de água
-
-see_water:
-beq $19, $0, waterball_set  # Se $19 for 0, configura a bola de água
-addi $19, $19, -1           # Caso contrário, decrementa $19
-j reset_fireball            # Vai para reset da bola de fogo
-
-fireball_set:
-addi $18, $0, 180            # Define a posição inicial da bola de fogo
-mul $16, $16, -1             # Inverte a direção da bola de fogo
-j see_water                  # Vai para verificação da bola de água
-
-waterball_set:
-addi $18, $0, 100            # Define a posição inicial da bola de água
-mul $17, $17, -1             # Inverte a direção da bola de água
-j reset_waterball            # Vai para reset da bola de água
-
+    beq $18, $0, set_fireball
+    add $21, $21, $16
+    addi $18, $18, -1
+    
+    beq $19, $0, set_waterball
+    add $23, $23, $17
+    add $19, $19, -1
+    
+    j reset_fireball
+    
+    set_fireball:
+    	addi $18, $0, 90
+    	mul $16, $16, -1
+    	addi $2, $0, 1
+    	add $4, $0, $16
+    	syscall
+    	j reset_fireball
+    set_waterball:
+    	addi $19, $0, 60
+    	mul $17, $17, -1
+    	j reset_fireball
+    
         
        		
 end:
