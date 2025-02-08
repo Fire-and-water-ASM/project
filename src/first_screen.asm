@@ -43,15 +43,14 @@ return:
 	jr $ra
 	
 timer:
-	addi $16, $0, 20000
+	addi $4, $0, 20000
 	nop
 	timer_for:
 	nop
-	beq $16, $0, return
-	addi $16, $16, -1
+	beq $4, $0, return
+	addi $4, $4, -1
 	j timer_for
 	nop
-	
 # --- CODE ---------------------------------------------------#
 	# $4 = POSITION Y ( addi $4, $0, 0)
 	# $5 = POSITION X ( addi $5, $0, 0)
@@ -60,8 +59,50 @@ timer:
 	# $9 = COLOR (ori $9, $0, 0x000000)
     
 start:
+
+	lui $8, 0x1001
+	addi $4, $0, 52320
+	sw $4, 400000($8) # 1/4 fireboy (up)
+	
+	lui $8, 0x1001
+	addi $4, $0, 66620
+	sw $4, 400004($8) # 2/4 fireboy (left)
+	
+	lui $8, 0x1001
+	addi $4, $0, 72780
+	sw $4, 400008($8) # 3/4 fireboy (down)
+	
+	lui $8, 0x1001
+	addi $4, $0, 66672
+	sw $4, 400012($8) # 4/4 fireboy (right)
+	
+	lui $8, 0x1001
+	addi $4, $0, 1
+	sw $4, 400016($8) # 1/4 watergirl (up)
+	
+	lui $8, 0x1001
+	addi $4, $0, 1
+	sw $4, 400020($8) # 2/4 watergirl (left)
+	
+	lui $8, 0x1001
+	addi $4, $0, 1
+	sw $4, 400024($8) # 3/4 watergirl (down)
+	
+	lui $8, 0x1001
+	addi $4, $0, 1
+	sw $4, 400028($8) # 4/4 watergirl (right)
+	
+	lui $8, 0x1001
+	addi $4, $0, 1
+	sw $4, 400032($8) # 1/1 fireball
+	
+	lui $8, 0x1001
+	addi $4, $0, 1
+	sw $4, 400036($8) # 1/1 waterball
+	
+	
     	
-    	#Background
+    #Background
 	addi $4, $0, 0
 	addi $5, $0, 0
 	addi $6, $0, 512
@@ -238,6 +279,7 @@ start:
    	 addi $15, $0, 100
    	 addi $16, $0, -8
    	 addi $17, $0, -8
+   	 
 reset_map: 
  
 	#Routes
@@ -1471,6 +1513,8 @@ paint_waterball:
     ori  $9, $0, 0xBCE2FC
     jal painter
     
+    
+    
     beq $14, $0, set_fireball
     addi $14, $14, -1
     
@@ -1490,6 +1534,7 @@ paint_waterball:
     	j read_character
    
 read_character:
+
 	 add $4, $0, ' ' #RESET
    	 lui $8, 0xffff
    	 lw $5, 4($8)
@@ -1512,21 +1557,170 @@ read_character:
    	 j reset_map
   
 up_fb:
-	sw $4, 4($8) # Reseting the cage
-	addi $18, $18, -3
-	j reset_map
+	
+	# ADDING UP:
+		lui $8, 0x1001
+		lw $9, 400000($8)
+		add $8, $8, $9
+		lw $6, 0($8)
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, -3072
+		lui $8, 0x1001
+		sw $9, 400000($8)
+	
+		addi $18, $18, -3
+	
+	# ADDING LEFT:
+		lui $8, 0x1001
+		lw $9, 400004($8)
+		addi $9, $9, -3072
+		sw $9, 400004($8)
+	
+	#ADDING DOWN:
+		lui $8, 0x1001
+		lw $9, 400008($8)
+		addi $9, $9, -3072
+		sw $9, 400008($8)
+
+	#ADDING RIGHT:
+		lui $8, 0x1001
+		lw $9, 400012($8)
+		addi $9, $9, -3072
+		sw $9, 400012($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
+			
 left_fb:
-	sw $4, 4($8)
-	addi $19, $19, -6
-	j reset_map
+			
+	# ADDING LEFT:
+		lui $8, 0x1001
+		lw $9, 400004($8)
+		add $8, $8, $9
+		lw $6, 0($8)
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, -12
+		lui $8, 0x1001
+		sw $9, 400004($8)
+		
+		addi $19, $19, -3
+	
+	# ADDING UP:
+		lui $8, 0x1001
+		lw $9, 400000($8)
+		addi $9, $9, -12
+		sw $9, 400000($8)
+		
+	#ADDING DOWN:
+		lui $8, 0x1001
+		lw $9, 400008($8)
+		addi $9, $9, -12
+		sw $9, 400008($8)
+
+	#ADDING RIGHT:
+		lui $8, 0x1001
+		lw $9, 400012($8)
+		addi $9, $9, -12
+		sw $9, 400012($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
+		
 down_fb:
-	sw $4, 4($8)
-	addi $18, $18, +3
-	j reset_map
+
+	# ADDING DOWN:
+	
+		lui $8, 0x1001
+		lw $9, 400008($8)
+		add $8, $8, $9
+		lw $6, 0($8)
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, +3072
+		lui $8, 0x1001
+		sw $9, 400008($8)
+		
+		add $18, $18, +3
+	
+	# ADDING UP:
+	
+		lui $8, 0x1001
+		lw $9, 400000($8)
+		addi $9, $9, +3072
+		sw $9, 400000($8)
+		
+	#ADDING LEFT:
+	
+		lui $8, 0x1001
+		lw $9, 400004($8)
+		addi $9, $9, +3072
+		sw $9, 400004($8)
+
+	#ADDING RIGHT:
+	
+		lui $8, 0x1001
+		lw $9, 400012($8)
+		addi $9, $9, +3072
+		sw $9, 400012($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
+	
 right_fb:
-	sw $4, 4($8)
-	addi $19, $19, +6
-	j reset_map
+
+	# ADDING RIGHT:
+		lui $8, 0x1001
+		lw $9, 400012($8)
+		
+		add $8, $8, $9
+		lw $6, 0($8)
+		
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, +12
+		lui $8, 0x1001
+		sw $9, 400012($8)
+		
+		addi $19, $19, +3
+		
+	# ADDING LEFT:
+		lui $8, 0x1001
+		lw $9, 400004($8)
+		addi $9, $9, +12
+		sw $9, 400004($8)
+	
+	#ADDING DOWN:
+		lui $8, 0x1001
+		lw $9, 400008($8)
+		addi $9, $9, +12
+		sw $9, 400008($8)
+
+	#ADDING UP:
+		lui $8, 0x1001
+		lw $9, 400000($8)
+		addi $9, $9, +12
+		sw $9, 400000($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
 	
 up_wg:
 	sw $4, 4($8)
@@ -1543,7 +1737,17 @@ down_wg:
 right_wg:
 	sw $4, 4($8)
 	addi $21, $21, +6
-	j reset_map	
+	j reset_map
+	
+blocked:
+	add $4, $0, ' ' #RESET
+	sw $4, 4($8) # Reseting the cage
+	
+	addi $4, $0, 'B'
+	addi $2, $0, 11
+	syscall
+	
+	j reset_map
 
         
        		
