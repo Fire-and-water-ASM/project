@@ -93,15 +93,21 @@ start:
 	sw $4, 400028($8) # 4/4 watergirl (right)
 	
 	lui $8, 0x1001
-	addi $4, $0, 1
-	sw $4, 400032($8) # 1/1 fireball
+	addi $4, $0, 24344
+	sw $4, 400032($8) # 1/2 fireball (left)
 	
 	lui $8, 0x1001
-	addi $4, $0, 1
-	sw $4, 400036($8) # 1/1 waterball
+	addi $4, $0, 24436
+	sw $4, 400036($8) # 2/2 fireball (right)
 	
+	lui $8, 0x1001
+	addi $4, $0, 79664
+	sw $4, 400040($8) # 1/2 waterball (left)
 	
-    	
+	lui $8, 0x1001
+	addi $4, $0, 78732
+	sw $4, 400044($8) # 2/2 waterball (right)
+	
     #Background
 	addi $4, $0, 0
 	addi $5, $0, 0
@@ -275,10 +281,10 @@ start:
    	jal painter
    	
    	# reseting values to paint fireball and waterball
-   	 addi $14, $0, 140
-   	 addi $15, $0, 100
-   	 addi $16, $0, -8
-   	 addi $17, $0, -8
+   	 addi $14, $0, 50
+   	 addi $15, $0, 30
+   	 addi $16, $0, -2
+   	 addi $17, $0, -2
    	 
 reset_map: 
  
@@ -1329,6 +1335,8 @@ paint_fireball:
         addi $7, $0, 2
         ori  $9, $0, 0xFAE846
         jal painter
+        
+
      
      add $25, $25, $17
      
@@ -1512,23 +1520,27 @@ paint_waterball:
     addi $7, $0, 2
     ori  $9, $0, 0xBCE2FC
     jal painter
+    
    
-    
+    #FIREBALL
     beq $14, $0, set_fireball
-    addi $14, $14, -1
-    
+    addi $14, $14, -1    	
+
+    #WATERBALL
     beq $15, $0, set_waterball
-    add $15, $15, -1 
-    
+    add $15, $15, -1
+     
     j read_character
     
     set_fireball:
-    	addi $14, $0, 140
+        
+    	addi $14, $0, 50
     	mul $16, $16, -1
+    	    	    	    	    	
     	j read_character
     	
     set_waterball:
-    	addi $15, $0, 100
+    	addi $15, $0, 30
     	mul $17, $17, -1
     	j read_character
    
@@ -1553,7 +1565,7 @@ read_character:
    	 beq $6, $5, down_wg
    	 addi $6, $0, '6'
    	 beq $6, $5, right_wg
-   	 j reset_map
+   	 j targed
   
 up_fb:
 	
@@ -1593,7 +1605,7 @@ up_fb:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
 			
 left_fb:
 			
@@ -1633,7 +1645,7 @@ left_fb:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
 		
 down_fb:
 
@@ -1678,7 +1690,7 @@ down_fb:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
 	
 right_fb:
 
@@ -1720,7 +1732,7 @@ right_fb:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
 	
 up_wg:
 
@@ -1760,7 +1772,7 @@ up_wg:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
 
 left_wg:
 
@@ -1800,7 +1812,7 @@ left_wg:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
 
 down_wg:
 
@@ -1845,7 +1857,8 @@ down_wg:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
+		
 
 right_wg:
 
@@ -1887,7 +1900,92 @@ right_wg:
 		lui $8, 0xffff
 		sw $4, 4($8)
 		
-		j reset_map
+		j targed
+		
+		
+targed:		
+
+	addi $4, $0, 103935
+
+	# TESTANDO FIREBOY: (1/4)
+	lui $8, 0x1001
+	lw $9, 400000($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+		
+	# TESTANDO FIREBOY: (2/4)
+	lui $8, 0x1001
+	lw $9, 400004($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+
+		
+	# TESTANDO FIREBOY: (3/4)
+	lui $8, 0x1001
+	lw $9, 400008($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+
+		
+	# TESTANDO FIREBOY: (4/4)
+	lui $8, 0x1001
+	lw $9, 400012($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+	
+	addi $4, $0, 16427828
+
+	# TESTANDO WATERGIRL: (1/4)
+	lui $8, 0x1001
+	lw $9, 400016($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+		
+	# TESTANDO WATERGIRL: (2/4)
+	lui $8, 0x1001
+	lw $9, 400020($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+
+		
+	# TESTANDO WATERGIRL: (3/4)
+	lui $8, 0x1001
+	lw $9, 400024($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+
+		
+	# TESTANDO WATERGIRL: (4/4)
+	lui $8, 0x1001
+	lw $9, 400028($8)
+	add $8, $8, $9
+	lw $7, 0($8)
+	
+	beq $7, $4, start # RESTART THE GAME (DIED)
+	
+	add $4, $0, $7
+	addi $2, $0, 1
+	syscall
+	
+	addi $4, $0, '\n'
+	addi $2, $0, 11
+	syscall
+	
+	j reset_map
 
 blocked:
 	add $4, $0, ' ' #RESET
@@ -1899,7 +1997,6 @@ blocked:
 	
 	j reset_map
 	
-       
        		
 end:
 	addi $2, $0, 10
