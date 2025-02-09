@@ -59,10 +59,10 @@ timer:
 	# $9 = COLOR (ori $9, $0, 0x000000)
     
 start:
+	addi $18, $0, 0
+	addi $19, $0, 0
 	addi $20, $0, 0
 	addi $21, $0, 0
-	addi $22, $0, 0
-	addi $23, $0, 0
 
 	lui $8, 0x1001
 	addi $4, $0, 55384
