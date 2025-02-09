@@ -1,0 +1,477 @@
+.text 
+	
+	main: 
+		
+		j starter
+	
+# --- FUNCTIONS --------------------------------------------------------------- #
+	
+	paint_bg:						# Function to paint the background
+		
+		lui $8, 0x1001				# Base address of video memory
+		addi $9, $0, 32768			# Number of graphic units
+		ori $10, $0, 0x2b3205		# Background color (#2B3205)
+		
+		paint_bg_px:
+		
+			beq $9, $0, end_paint_bg	# Label to return to the function call
+			sw $10, 0($8)			# Paint pixel with background color
+    		addi $8, $8, 4			# Increment the address by 4 (next pixel)
+    		addi $9, $9, -1			# Decrement the counter
+    		j paint_bg_px			# Go back to the loop
+    	
+    	end_paint_bg:
+    	
+    		jr $ra					# Return to the function call
+
+
+
+    painter:					# Function to paint whatever 
+    	
+    	lui $8, 0x1001			# Base address of video memory
+    	# $4 = POSITION X ( addi $4, $0, 0)
+    	# $5 = POSITION Y ( addi $5, $0, 0)
+		# $6 = LENGTH     ( addi $6, $0, 0)
+    	# $7 = THICKNESS  ( addi $7, $0, 0)
+    	# $9 = COLOR (ori $9, $0, 0x000000)
+    	add $10, $0, $6			# Storing the Line Length
+    	addi $11, $0, 0			# Stating a Line Counter
+    	
+    	mul $4, $4, 1024		# X * Real_width (1024)
+    	mul $5, $5, 4			# Y * 4
+    	add $5, $5, $4			# Row + Column
+    	add $8, $8, $5			# Starting address of the line 
+    	
+    	for_vertical:
+    		
+    		beq $7, 1, end_painter 	# If thickness counter = 1, exit
+    		addi $7, $7, -1 		# Decrease the vertical counter
+    		
+    		for_horizontal:
+    		
+    			beq $6, $0, reset_painter 	# If length = 0, reset painter
+    			sw $9, 0($8)				# Paint pixel with the line color
+    			addi $8, $8, 4	     		# Increment the address by 4 (next logical pixel)
+    			addi $11, $11, 4       		# Increment in counter
+    			addi $6, $6, -1      		# Decrease the line length
+    			j for_horizontal
+    			
+    			reset_painter:
+    				
+    				add $6, $0, $10		# Increment LENGHT REGISTER the original value ($10)
+    				sub $8, $8, $11			# Decrease the addresses added in $8
+    				addi $8, $8, 1024		# Increment 1024 to skip a line
+    				addi $11, $0, 0			# Resetting the $11
+    				j for_vertical
+    		
+    	end_painter:
+    		
+    		jr $ra	# Return to the function call
+    			
+
+# --- STARTERCODE ------------------------------------------------------------- # 
+
+	starter:
+	
+		jal paint_bg
+		
+	# F
+		
+		
+	addi $4, $0, 30
+    	addi $5, $0, 10
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 10
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 44
+    	addi $5, $0, 10
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	
+   	# O
+   	
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 34
+    	addi $6, $0, 12
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 30
+    	addi $6, $0, 4
+    	addi $7, $0, 30
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 62
+    	addi $5, $0, 34
+    	addi $6, $0, 12
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 46
+    	addi $6, $0, 4
+    	addi $7, $0, 30
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	# G
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 58
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 74
+    	addi $6, $0, 4
+    	addi $7, $0, 12
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 44
+    	addi $5, $0, 66
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 41
+    	addi $5, $0, 62
+    	addi $6, $0, 4
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 54
+    	addi $6, $0, 4
+    	addi $7, $0, 20
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 52
+    	addi $5, $0, 58
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 52
+    	addi $5, $0, 62
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 56
+    	addi $5, $0, 62
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 56
+    	addi $5, $0, 68
+    	addi $6, $0, 4
+    	addi $7, $0, 16
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 71
+    	addi $5, $0, 60
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 64
+    	addi $5, $0, 56
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 59
+    	addi $5, $0, 59
+    	addi $6, $0, 4
+    	addi $7, $0, 6
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	# O 
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 82
+    	addi $6, $0, 4
+    	addi $7, $0, 28
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 86
+    	addi $6, $0, 12
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 98
+    	addi $6, $0, 4
+    	addi $7, $0, 28
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	addi $4, $0, 60
+    	addi $5, $0, 86
+    	addi $6, $0, 12
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xff0000
+   	jal painter
+   	
+   	# E
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 114
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 114
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 46
+    	addi $5, $0, 114
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 62
+    	addi $5, $0, 114
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
+   	
+   	# A
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 144
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 144
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 160
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 46
+    	addi $5, $0, 144
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 24
+    	addi $5, $0, 152
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 156
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 156
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	
+   	
+   	# G
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 172
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 188
+    	addi $6, $0, 4
+    	addi $7, $0, 12
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 44
+    	addi $5, $0, 180
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 41
+    	addi $5, $0, 176
+    	addi $6, $0, 4
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 33
+    	addi $5, $0, 168
+    	addi $6, $0, 4
+    	addi $7, $0, 20
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 52
+    	addi $5, $0, 172
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 52
+    	addi $5, $0, 176
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 56
+    	addi $5, $0, 176
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 56
+    	addi $5, $0, 182
+    	addi $6, $0, 4
+    	addi $7, $0, 16
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 71
+    	addi $5, $0, 174
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 64
+    	addi $5, $0, 170
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 59
+    	addi $5, $0, 173
+    	addi $6, $0, 4
+    	addi $7, $0, 6
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	
+   	
+   	
+   	# U
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 196
+    	addi $6, $0, 4
+    	addi $7, $0, 32
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 61
+    	addi $5, $0, 200
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 216
+    	addi $6, $0, 4
+    	addi $7, $0, 32
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	
+   	# A
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 224
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 224
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 236
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
+   	addi $4, $0, 46
+    	addi $5, $0, 224
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0x66ccff
+   	jal painter
+   	
