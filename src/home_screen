@@ -475,3 +475,4 @@
    	ori  $9, $0, 0x66ccff
    	jal painter
    	
+   	
