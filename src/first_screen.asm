@@ -61,7 +61,7 @@ timer:
 start:
 
 	lui $8, 0x1001
-	addi $4, $0, 52320
+	addi $4, $0, 55384
 	sw $4, 400000($8) # 1/4 fireboy (up)
 	
 	lui $8, 0x1001
@@ -69,7 +69,7 @@ start:
 	sw $4, 400004($8) # 2/4 fireboy (left)
 	
 	lui $8, 0x1001
-	addi $4, $0, 72780
+	addi $4, $0, 72792
 	sw $4, 400008($8) # 3/4 fireboy (down)
 	
 	lui $8, 0x1001
@@ -77,19 +77,19 @@ start:
 	sw $4, 400012($8) # 4/4 fireboy (right)
 	
 	lui $8, 0x1001
-	addi $4, $0, 1
+	addi $4, $0, 55332
 	sw $4, 400016($8) # 1/4 watergirl (up)
 	
 	lui $8, 0x1001
-	addi $4, $0, 1
+	addi $4, $0, 66572
 	sw $4, 400020($8) # 2/4 watergirl (left)
 	
 	lui $8, 0x1001
-	addi $4, $0, 1
+	addi $4, $0, 72740
 	sw $4, 400024($8) # 3/4 watergirl (down)
 	
 	lui $8, 0x1001
-	addi $4, $0, 1
+	addi $4, $0, 66624
 	sw $4, 400028($8) # 4/4 watergirl (right)
 	
 	lui $8, 0x1001
@@ -1512,8 +1512,7 @@ paint_waterball:
     addi $7, $0, 2
     ori  $9, $0, 0xBCE2FC
     jal painter
-    
-    
+   
     
     beq $14, $0, set_fireball
     addi $14, $14, -1
@@ -1651,7 +1650,8 @@ down_fb:
 		sw $9, 400008($8)
 		
 		add $18, $18, +3
-	
+		
+		
 	# ADDING UP:
 	
 		lui $8, 0x1001
@@ -1723,22 +1723,172 @@ right_fb:
 		j reset_map
 	
 up_wg:
-	sw $4, 4($8)
-	addi $20, $20, -3
-	j reset_map
-left_wg:
-	sw $4, 4($8)
-	addi $21, $21, -6
-	j reset_map
-down_wg:
-	sw $4, 4($8)
-	addi $20, $20, +3
-	j reset_map
-right_wg:
-	sw $4, 4($8)
-	addi $21, $21, +6
-	j reset_map
+
+	# ADDING UP:
+		lui $8, 0x1001
+		lw $9, 400016($8)
+		add $8, $8, $9
+		lw $6, 0($8)
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, -3072
+		lui $8, 0x1001
+		sw $9, 400016($8)
 	
+		addi $20, $20, -3
+	
+	# ADDING LEFT:
+		lui $8, 0x1001
+		lw $9, 400020($8)
+		addi $9, $9, -3072
+		sw $9, 400020($8)
+	
+	#ADDING DOWN:
+		lui $8, 0x1001
+		lw $9, 400024($8)
+		addi $9, $9, -3072
+		sw $9, 400024($8)
+
+	#ADDING RIGHT:
+		lui $8, 0x1001
+		lw $9, 400028($8)
+		addi $9, $9, -3072
+		sw $9, 400028($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
+
+left_wg:
+
+	# ADDING LEFT:
+		lui $8, 0x1001
+		lw $9, 400020($8)
+		add $8, $8, $9
+		lw $6, 0($8)
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, -12
+		lui $8, 0x1001
+		sw $9, 400020($8)
+		
+		addi $21, $21, -3
+	
+	# ADDING UP:
+		lui $8, 0x1001
+		lw $9, 400016($8)
+		addi $9, $9, -12
+		sw $9, 400016($8)
+		
+	#ADDING DOWN:
+		lui $8, 0x1001
+		lw $9, 400024($8)
+		addi $9, $9, -12
+		sw $9, 400024($8)
+
+	#ADDING RIGHT:
+		lui $8, 0x1001
+		lw $9, 400028($8)
+		addi $9, $9, -12
+		sw $9, 400028($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
+
+down_wg:
+
+	# ADDING DOWN:
+	
+		lui $8, 0x1001
+		lw $9, 400024($8)
+		add $8, $8, $9
+		lw $6, 0($8)
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, +3072
+		lui $8, 0x1001
+		sw $9, 400024($8)
+		
+		add $20, $20, +3
+		
+				
+	# ADDING UP:
+	
+		lui $8, 0x1001
+		lw $9, 400016($8)
+		addi $9, $9, +3072
+		sw $9, 400016($8)
+		
+	#ADDING LEFT:
+	
+		lui $8, 0x1001
+		lw $9, 400020($8)
+		addi $9, $9, +3072
+		sw $9, 400020($8)
+
+	#ADDING RIGHT:
+	
+		lui $8, 0x1001
+		lw $9, 400028($8)
+		addi $9, $9, +3072
+		sw $9, 400028($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
+
+right_wg:
+
+	# ADDING RIGHT:
+		lui $8, 0x1001
+		lw $9, 400028($8)
+		
+		add $8, $8, $9
+		lw $6, 0($8)
+		
+		addi $7, $0, 1645315
+		beq $6, $7, blocked
+		addi $9, $9, +12
+		lui $8, 0x1001
+		sw $9, 400028($8)
+		
+		addi $21, $21, +3
+		
+	# ADDING LEFT:
+		lui $8, 0x1001
+		lw $9, 400020($8)
+		addi $9, $9, +12
+		sw $9, 400020($8)
+	
+	#ADDING DOWN:
+		lui $8, 0x1001
+		lw $9, 400024($8)
+		addi $9, $9, +12
+		sw $9, 400024($8)
+
+	#ADDING UP:
+		lui $8, 0x1001
+		lw $9, 400016($8)
+		addi $9, $9, +12
+		sw $9, 400016($8)
+		
+	# RESETING CASE	
+		add $4, $0, ' '
+		lui $8, 0xffff
+		sw $4, 4($8)
+		
+		j reset_map
+
 blocked:
 	add $4, $0, ' ' #RESET
 	sw $4, 4($8) # Reseting the cage
@@ -1748,8 +1898,8 @@ blocked:
 	syscall
 	
 	j reset_map
-
-        
+	
+       
        		
 end:
 	addi $2, $0, 10
