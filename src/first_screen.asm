@@ -1977,24 +1977,12 @@ targed:
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
 	
-	add $4, $0, $7
-	addi $2, $0, 1
-	syscall
-	
-	addi $4, $0, '\n'
-	addi $2, $0, 11
-	syscall
-	
 	j reset_map
 
 blocked:
 	add $4, $0, ' ' #RESET
 	sw $4, 4($8) # Reseting the cage
-	
-	addi $4, $0, 'B'
-	addi $2, $0, 11
-	syscall
-	
+		
 	j reset_map
 	
        		
