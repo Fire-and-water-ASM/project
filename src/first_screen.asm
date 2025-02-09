@@ -59,6 +59,10 @@ timer:
 	# $9 = COLOR (ori $9, $0, 0x000000)
     
 start:
+	addi $20, $0, 0
+	addi $21, $0, 0
+	addi $22, $0, 0
+	addi $23, $0, 0
 
 	lui $8, 0x1001
 	addi $4, $0, 55384
@@ -1521,6 +1525,21 @@ paint_waterball:
     ori  $9, $0, 0xBCE2FC
     jal painter
     
+    #PINTANDO A SAIDA
+    
+    addi $4, $0, 87
+    addi $5, $0, 253
+    addi $6, $0, 3
+    addi $7, $0, 15
+    ori  $9, $0, 0x8A7C41
+    jal painter
+    
+    addi $4, $0, 59
+    addi $5, $0, 253
+    addi $6, $0, 3
+    addi $7, $0, 15
+    ori  $9, $0, 0x8A7C41
+    jal painter
    
     #FIREBALL
     beq $14, $0, set_fireball
@@ -1904,8 +1923,11 @@ right_wg:
 		
 		
 targed:		
-
+	addi $10, $0, 0
+	addi $11, $0, 2
+	
 	addi $4, $0, 103935
+	addi $5, $0, 9075777
 
 	# TESTANDO FIREBOY: (1/4)
 	lui $8, 0x1001
@@ -1914,6 +1936,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_fb # PASS THE GAME
 		
 	# TESTANDO FIREBOY: (2/4)
 	lui $8, 0x1001
@@ -1922,6 +1945,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_fb # PASS THE GAME
 
 		
 	# TESTANDO FIREBOY: (3/4)
@@ -1931,6 +1955,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_fb # PASS THE GAME
 
 		
 	# TESTANDO FIREBOY: (4/4)
@@ -1940,6 +1965,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_fb # PASS THE GAME
 	
 	addi $4, $0, 16427828
 
@@ -1950,6 +1976,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_wg # PASS THE GAME
 		
 	# TESTANDO WATERGIRL: (2/4)
 	lui $8, 0x1001
@@ -1958,6 +1985,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_wg # PASS THE GAME
 
 		
 	# TESTANDO WATERGIRL: (3/4)
@@ -1967,6 +1995,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_wg # PASS THE GAME
 
 		
 	# TESTANDO WATERGIRL: (4/4)
@@ -1976,6 +2005,7 @@ targed:
 	lw $7, 0($8)
 	
 	beq $7, $4, start # RESTART THE GAME (DIED)
+	beq $7, $5, next_level_wg # PASS THE GAME
 	
 	j reset_map
 
@@ -1985,7 +2015,11 @@ blocked:
 		
 	j reset_map
 	
-       		
+next_level_fb:
+	addi $4, $0, 1
+next_level_wg:
+	addi $4, $0, 1
+	
 end:
 	addi $2, $0, 10
 	syscall
