@@ -75,14 +75,14 @@
 	
 		jal paint_bg
 		
-				    # Primeiro bloco
-  		# Primeiro bloco
-    	addi $4, $0, 12        # Posição Y
-    	addi $5, $0, 4         # Posição X
-    	addi $6, $0, 16        # Altura do bloco
-		addi $7, $0, 6         # Largura do bloco
-    	ori  $9, $0, 0x5a660f  # Cor do bloco
-    	jal painter
+	
+  	# Primeiro bloco
+    addi $4, $0, 12        # Posição Y
+    addi $5, $0, 4         # Posição X
+    addi $6, $0, 16        # Altura do bloco
+	addi $7, $0, 6         # Largura do bloco
+    ori  $9, $0, 0x5a660f  # Cor do bloco
+    jal painter
 
     # Segundo bloco
     addi $4, $0, 12        # Posição Y
