@@ -1,7 +1,7 @@
 .text
 	main:
 		
-		jal start3 #startergame
+		jal startergame #startergame
 		
 # --- FUNCTIONS --------------------------------------------------------------- #
 
@@ -817,6 +817,7 @@ start:
 	addi $19, $0, 0
 	addi $20, $0, 0
 	addi $21, $0, 0
+	addi $23, $0, +10
 
 	lui $8, 0x1001
 	addi $4, $0, 55384
@@ -1047,8 +1048,8 @@ start:
    	jal painter
    	
    	# reseting values to paint fireball and waterball
-   	 addi $14, $0, 50
-   	 addi $15, $0, 30
+   	 addi $14, $0, 90
+   	 addi $15, $0, 50
    	 addi $16, $0, -2
    	 addi $17, $0, -2
    	 
@@ -2315,13 +2316,13 @@ paint_waterball:
     
     set_fireball:
         
-    	addi $14, $0, 50
+    	addi $14, $0, 90
     	mul $16, $16, -1
     	    	    	    	    	
     	j read_character
     	
     set_waterball:
-    	addi $15, $0, 30
+    	addi $15, $0, 50
     	mul $17, $17, -1
     	j read_character
    
@@ -2763,64 +2764,63 @@ start3:
 
 	lui $8, 0x1001
 	addi $4, $0, 55384
-	sw $4, 400056($8) # 1/4 fireboy (up)
+	sw $4, 800000($8) # 1/4 fireboy (up)
 	
 	lui $8, 0x1001
 	addi $4, $0, 66620
-	sw $4, 400004($8) # 2/4 fireboy (left)
+	sw $4, 800004($8) # 2/4 fireboy (left)
 	
 	lui $8, 0x1001
 	addi $4, $0, 72792
-	sw $4, 400008($8) # 3/4 fireboy (down)
+	sw $4, 800008($8) # 3/4 fireboy (down)
 	
 	lui $8, 0x1001
 	addi $4, $0, 67696
-	sw $4, 400012($8) # 4/4 fireboy (right) # ADICIONADO ( UNICO ATUALIZADO )
+	sw $4, 800012($8) # 4/4 fireboy (right)
 	
 	lui $8, 0x1001
 	addi $4, $0, 55332
-	sw $4, 400016($8) # 1/4 watergirl (up)
+	sw $4, 800016($8) # 1/4 watergirl (up)
 	
 	lui $8, 0x1001
 	addi $4, $0, 66572
-	sw $4, 400020($8) # 2/4 watergirl (left)
+	sw $4, 800020($8) # 2/4 watergirl (left)
 	
 	lui $8, 0x1001
 	addi $4, $0, 72740
-	sw $4, 400024($8) # 3/4 watergirl (down)
+	sw $4, 800024($8) # 3/4 watergirl (down)
 	
 	lui $8, 0x1001
 	addi $4, $0, 67644
-	sw $4, 400028($8) # 4/4 watergirl (right) # ADICIONADO ( UNICO ATUALIZADO )
+	sw $4, 800028($8) # 4/4 watergirl (right)
 	
 	lui $8, 0x1001
 	addi $4, $0, 24344
-	sw $4, 400032($8) # 1/2 fireball (left)
+	sw $4, 800032($8) # 1/2 fireball (left)
 	
 	lui $8, 0x1001
 	addi $4, $0, 24436
-	sw $4, 400036($8) # 2/2 fireball (right)
+	sw $4, 800036($8) # 2/2 fireball (right)
 	
 	lui $8, 0x1001
 	addi $4, $0, 79664
-	sw $4, 400040($8) # 1/2 waterball (left)
+	sw $4, 800040($8) # 1/2 waterball (left)
 	
 	lui $8, 0x1001
 	addi $4, $0, 78732
-	sw $4, 400044($8) # 2/2 waterball (right)
+	sw $4, 800044($8) # 2/2 waterball (right)
 	
 	lui $8, 0x1001
 	addi $4, $0, 0
-	sw $4, 400048($8) # fireboy phase 1 pass check
+	sw $4, 800048($8) # fireboy phase 1 pass check
 	
 	lui $8, 0x1001
 	addi $4, $0, 0
-	sw $4, 400052($8) # watergirl phase 1 pass check
+	sw $4, 800052($8) # watergirl phase 1 pass check
 	
 	lui $8, 0x1001
-	addi $4, $0, 4
-	
-	sw $4, 400056($8) # end timer bot
+	addi $4, $0, 2
+	sw $4, 800056($8) # delay to bot
 	
     #Background
 	addi $4, $0, 0
@@ -2994,10 +2994,10 @@ start3:
    	jal painter
   
      	# reseting values to paint fireball and waterball
-   	 addi $14, $0, 15
-   	 addi $15, $0, 5
-   	 addi $16, $0, -1
-   	 addi $17, $0, -1
+   	 addi $14, $0, 19
+   	 addi $15, $0, 28
+   	 addi $16, $0, -2
+   	 addi $17, $0, -2
    	 addi $18, $0, 3
    	 addi $20, $0, 3
    	 addi $22, $0, 23
@@ -4399,6 +4399,7 @@ paint_waterball2:
     	addi $7, $0, 3
     	ori  $9, $0, 0xFAE846
    	 jal painter 
+   	
    	 
    	  addi $4, $0, 70
     	addi $5, $0,101  
@@ -4444,54 +4445,40 @@ paint_waterball2:
     	ori  $9, $0, 0xBCE2FC
    	 jal painter
    	 
-   	 
-   	 
+   	 lui $8, 0x1001
+   	 lw $9, 800056($8)
+   	 beq $9, $0, bot_delayed
+   	 addi $9, $9, -1
+   	 sw $9, 800056($8)
+   	 j whatever
+ 
+bot_delayed:
 	lui $8, 0x1001
-	lw $9, 400056($8)
-	beq $9, $0, end_timer_bot
-	addi $9, $9, -1
-	sw $9, 400056($8)
-	j whatever
-	
-end_timer_bot:
-	lui $8, 0x1001
-	addi $9, $0, 4
-	sw $9, 400056($8)
+	addi $9, $0, 2
+	sw $9, 800056($8)
 	
 	beq $14, $0, set_fireball2
 	addi $14, $14, -1
-	
-	addi $4, $0, 1
-	mul $4, $4, $16
-	
-	add $16, $16, $4
 	add $23, $23, $16
-	
+testar_la:	
 	beq $15, $0, set_waterball2
 	addi $15, $15, -1
-	
-	addi $4, $0, 1
-	mul $4, $4, $17
-	
-	add $17, $17, $4
 	add $25, $25, $17
-	
 	j whatever
 	
-	set_fireball2:
-	addi $14, $0, 5
+set_fireball2:
+	addi $14, $0, 19
 	mul $16, $16, -1
-	j whatever
-	
-	set_waterball2:
-	addi $15, $0, 5
+	j testar_la
+set_waterball2:
+	addi $15, $0, 28
 	mul $17, $17, -1
-	j whatever
+
+	j whatever	
 	
 	
 whatever:
 	
-	add $4, $0, ' ' #RESET
    	 lui $8, 0xffff
    	 lw $5, 4($8)
    	 addi $6, $0, 'w'
@@ -4515,81 +4502,121 @@ whatever:
 up_fb2:
 	addi $18, $18, -3
 	lui $8, 0x1001
-	lw $9, 400012($8)
+	lw $9, 800012($8)
 	addi $9, $9, -3072
-	sw $9, 400012($8)
+	sw $9, 800012($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
 	j targed2
 left_fb2:
 	addi $19, $19, -3
 	lui $8, 0x1001
-	lw $9, 400012($8)
+	lw $9, 800012($8)
 	addi $9, $9, -12
-	sw $9, 400012($8)
+	sw $9, 800012($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
 	j targed2
 down_fb2:
  	addi $18, $18, +3
 	lui $8, 0x1001
-	lw $9, 400012($8)
+	lw $9, 800012($8)
 	addi $9, $9, +3072
-	sw $9, 400012($8)
+	sw $9, 800012($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
  	j targed2
 right_fb2:
 	addi $19, $19, +3
 	lui $8, 0x1001
-	lw $9, 400012($8)
+	lw $9, 800012($8)
 	addi $9, $9, +12
-	sw $9, 400012($8)
+	sw $9, 800012($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
 	j targed2	
 
 up_wg2:
 	addi $20, $20, -3
 	lui $8, 0x1001
-	lw $9, 400028($8)
+	lw $9, 800028($8)
 	addi $9, $9, -3072
-	sw $9, 400028($8)
+	sw $9, 800028($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
 	j targed2
 left_wg2:
 	addi $21, $21, -3
 	lui $8, 0x1001
-	lw $9, 400028($8)
+	lw $9, 800028($8)
 	addi $9, $9, -12
-	sw $9, 400028($8)
+	sw $9, 800028($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
 	j targed2
 down_wg2:
  	addi $20, $20, +3
 	lui $8, 0x1001
-	lw $9, 400028($8)
+	lw $9, 800028($8)
 	addi $9, $9, +3072
-	sw $9, 400028($8)
+	sw $9, 800028($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
  	j targed2
 right_wg2:
 	addi $21, $21, +3
 	lui $8, 0x1001
-	lw $9, 400028($8)
+	lw $9, 800028($8)
 	addi $9, $9, +12
-	sw $9, 400028($8)
+	sw $9, 800028($8)
+	
+	add $4, $0, ' ' #RESET
+   	 lui $8, 0xffff
+   	 sw $4, 4($8)
 	j targed2	
  
 targed2:
 	addi $6, $0, 9075777
 	addi $7, $0, 103935
 	lui $8, 0x1001
-	lw $9, 400012($8)
-	beq $7, $9, start3
-	beq $6, $9, next_level_fb2
+	lw $9, 800012($8)
+	add $8, $8, $9
+	lw $10, 0($8)
+
+	
+	beq $7, $10, start3
+	beq $6, $10, next_level_fb2
+	
+	
 test_blue:
 	addi $7, $0, 16427828
 	lui $8, 0x1001
-	lw $9, 400028($8)
-	beq $7, $9, start3
-	beq $6, $9, next_level_wg2
+	lw $9, 800028($8)
+	add $8, $8, $9
+	lw $10, 0($8)
+	beq $7, $10, start3
+	beq $6, $10, next_level_wg2
 	j reset_map2
 
 next_level_fb2:
 	lui $8, 0x1001
 	addi $9, $0, 1
-	sw $9, 400048($8)
-	lw $10, 400052($8)
+	sw $9, 800048($8)
+	lw $10, 800052($8)
 	
 	beq $9, $10, endgame
 	j test_blue
@@ -4597,8 +4624,8 @@ next_level_fb2:
 next_level_wg2:
 	lui $8, 0x1001
 	addi $9, $0, 1
-	sw $9, 400048($8)
-	lw $10, 400052($8)
+	sw $9, 800048($8)
+	lw $10, 800052($8)
 	
 	beq $9, $10, endgame
 	j reset_map2
