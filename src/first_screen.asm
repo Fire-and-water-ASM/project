@@ -866,7 +866,8 @@ paint_fireboy:
     	ori  $9, $0, 0xf91111
    	 jal painter
    	 
-   	 	  	
+   	
+   	 	  	 
        	addi $4, $18, 65
     	addi $5, $19, 18
     	addi $6, $0, 2
@@ -874,13 +875,15 @@ paint_fireboy:
     	ori  $9, $0, 0xf91111
    	 jal painter
    	 
+   	  
+   	  
    	 addi $4, $18, 64
     	addi $5, $19, 23
     	addi $6, $0, 2
     	addi $7, $0, 2
     	ori  $9, $0, 0xf91111
    	 jal painter
-   	 
+   	
    	 	  	
        	addi $4, $18, 65
     	addi $5, $19, 24
@@ -897,12 +900,15 @@ paint_fireboy:
     	ori  $9, $0, 0xf91111
    	 jal painter
    	 
+   	 
    	addi $4, $18, 68
     	addi $5, $19, 19
     	addi $6, $0, 2
     	addi $7, $0, 2
     	ori  $9, $0, 0xf91111
    	 jal painter
+   	 
+   	 	 
    	 
    	 addi $4, $18, 67
     	addi $5, $19, 23
@@ -911,13 +917,15 @@ paint_fireboy:
     	ori  $9, $0, 0xf91111
    	 jal painter
    	 
+   	 
+   	 
    	addi $4, $18, 68 
     	addi $5, $19, 24
     	addi $6, $0, 2
     	addi $7, $0, 2
     	ori  $9, $0, 0xf91111
    	 jal painter
-   	 
+   	 	
    	 
        	addi $4, $18, 62
     	addi $5, $19, 21
@@ -925,6 +933,7 @@ paint_fireboy:
     	addi $7, $0, 2
     	ori  $9, $0, 0xf91111
    	 jal painter
+
    	 
    	 addi $4, $18, 58
     	addi $5, $19, 20
@@ -933,12 +942,15 @@ paint_fireboy:
     	ori  $9, $0, 0xf91111
    	 jal painter
    	 
+   	 
+   	 
    	addi $4, $18, 58
     	addi $5, $19,20
     	addi $6, $0, 1
     	addi $7, $0, 3 
     	ori  $9, $0, 0xeede48
    	 jal painter
+   	
    	 
    	 addi $4, $18, 58
     	addi $5, $19,20
@@ -947,12 +959,16 @@ paint_fireboy:
     	ori  $9, $0, 0xeede48
    	 jal painter
    	 
+   	 
+   	 
    	  addi $4, $18, 57
     	addi $5, $19,22
     	addi $6, $0, 2
     	addi $7, $0, 2
     	ori  $9, $0, 0xeede48
    	 jal painter
+   	 
+   	 
    	 
    	 addi $4, $18, 59
     	addi $5, $19,23
