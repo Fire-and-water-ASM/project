@@ -62,8 +62,8 @@ startergame:
 
 	addi $4, $0, 0
 	addi $5, $0, 0
-	addi $6, $0, 512
-	addi $7, $0, 256
+	addi $6, $0, 256
+	addi $7, $0, 128
 	ori  $9, $0, 0x2b3205
 	jal painter
 
@@ -2841,8 +2841,8 @@ start3:
     #Background
 	addi $4, $0, 0
 	addi $5, $0, 0
-	addi $6, $0, 512
-	addi $7, $0, 256
+	addi $6, $0, 256
+	addi $7, $0, 128
 	ori  $9, $0, 0x2b3205
 	jal painter
 
@@ -2935,77 +2935,77 @@ start3:
    	addi $4, $0, 0
     	addi $5, $0, 0
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 24
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 48
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 72
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 96
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 120
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 144
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 168
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 192
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 216
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 240
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 256 
    	ori  $9, $0, 0x2b3205
    	jal painter
   
