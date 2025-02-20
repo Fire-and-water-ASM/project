@@ -7,37 +7,37 @@
 
 painter:				# Function to paint whatever 
     	
-    	lui $8, 0x1001			# Base address of video memory
+    lui $8, 0x1001			# Base address of video memory
     	
-    	add $10, $0, $6			# Storing the Line Length
-    	addi $11, $0, 0			# Stating a Line Counter
+    add $10, $0, $6			# Storing the Line Length
+    addi $11, $0, 0			# Stating a Line Counter
     	
-    	mul $4, $4, 1024		# X * Real_width (1024)
-    	mul $5, $5, 4			# Y * 4
-    	add $5, $5, $4			# Row + Column
-    	add $8, $8, $5			# Starting address of the line 
+    mul $4, $4, 1024		# X * Real_width (1024)
+    mul $5, $5, 4			# Y * 4
+    add $5, $5, $4			# Row + Column
+    add $8, $8, $5			# Starting address of the line 
     	
-    	for_vertical:
+    for_vertical:
     		
-    		beq $7, 1, return	 	# If thickness counter = 1, exit
-    		addi $7, $7, -1 		# Decrease the vertical counter
+    	beq $7, 1, return	 	# If thickness counter = 1, exit
+    	addi $7, $7, -1 		# Decrease the vertical counter
     		
-    		for_horizontal:
+    	for_horizontal:
     		
-    			beq $6, $0, reset_painter 	# If length = 0, reset painter
-    			sw $9, 0($8)				# Paint pixel with the line color
-    			addi $8, $8, 4	     		# Increment the address by 4 (next logical pixel)
-    			addi $11, $11, 4       		# Increment in counter
-    			addi $6, $6, -1      		# Decrease the line length
-    			j for_horizontal
+    		beq $6, $0, reset_painter 	# If length = 0, reset painter
+    		sw $9, 0($8)				# Paint pixel with the line color
+    		addi $8, $8, 4	     		# Increment the address by 4 (next logical pixel)
+    		addi $11, $11, 4       		# Increment in counter
+    		addi $6, $6, -1      		# Decrease the line length
+    		j for_horizontal
     			
-    			reset_painter:
+    		reset_painter:
     				
-    				add $6, $0, $10		# Increment LENGHT REGISTER the original value ($10)
-    				sub $8, $8, $11			# Decrease the addresses added in $8
-    				addi $8, $8, 1024		# Increment 1024 to skip a line
-    				addi $11, $0, 0			# Resetting the $11
-    				j for_vertical
+    			add $6, $0, $10		# Increment LENGHT REGISTER the original value ($10)
+    			sub $8, $8, $11			# Decrease the addresses added in $8
+    			addi $8, $8, 1024		# Increment 1024 to skip a line
+    			addi $11, $0, 0			# Resetting the $11
+    			j for_vertical
     	
 return:
 	jr $ra
@@ -69,16 +69,16 @@ startergame:
 	jal painter
 
 	addi $4, $0, 30
-    	addi $5, $0, 10
-    	addi $6, $0, 16
-    	addi $7, $0, 4
+    addi $5, $0, 10
+    addi $6, $0, 16
+    addi $7, $0, 4
    	ori  $9, $0, 0xff0000
    	jal painter
    	
    	addi $4, $0, 30
-    	addi $5, $0, 10
-    	addi $6, $0, 4
-    	addi $7, $0, 36
+    addi $5, $0, 10
+    addi $6, $0, 4
+    addi $7, $0, 36
    	ori  $9, $0, 0xff0000
    	jal painter
    	
@@ -875,19 +875,19 @@ start:
     #Background
 	addi $4, $0, 0
 	addi $5, $0, 0
-	addi $6, $0, 256
-	addi $7, $0, 128
+	addi $6, $0, 255
+	addi $7, $0, 127
 	ori  $9, $0, 0x2b3205
 	jal painter
 	
 	
 	#Details: Horizontal
     	addi $4, $0, 0
-    	addi $5, $0, 0
+   		addi $5, $0, 0
     	addi $6, $0, 256
     	addi $7, $0, 6 
-   	ori  $9, $0, 0x5a660f 
-   	jal painter
+   		ori  $9, $0, 0x5a660f 
+   		jal painter
    	
     	addi $4, $0, 12
     	addi $5, $0, 0
