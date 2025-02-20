@@ -1,7 +1,7 @@
 .text
 	main:
 		
-		jal start #startergame
+		jal  startergame  
 		
 # --- FUNCTIONS --------------------------------------------------------------- #
 
@@ -57,6 +57,7 @@ timer:
 	# $6 = WIDTH     ( addi $6, $0, 0)
 	# $7 = HEIGHT  ( addi $7, $0, 0)
 	# $9 = COLOR (ori $9, $0, 0x000000)
+	
     
 startergame:
 
@@ -804,10 +805,6 @@ startergame:
    	 add $4, $0, 'l' #RESET
    	  sw $4, 4($8)
    	 j home_loop
-   	
-
-    
-    
     
     
     
@@ -4646,20 +4643,226 @@ next_level_wg2:
 	beq $9, $10, endgame
 	j reset_map2
 	
-endgame:
+	endgame:
+	# BG
 	addi $4, $0, 0
 	addi $5, $0, 0
 	addi $6, $0, 256
-	addi $7, $0, 129
-	ori  $9, $0, 0xff0000
-	jal painter
-	
-	addi $4, $0, 0
-	addi $5, $0, 127
-	addi $6, $0, 128
-	addi $7, $0, 129
-	ori  $9, $0, 0x0000ff
+	addi $7, $0, 128
+	ori  $9, $0, 0x2b3205
 	jal painter
 
-end:
+	# Y
 	
+	addi $4, $0, 20
+    	addi $5, $0, 20
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 27
+    	addi $5, $0, 24
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 34
+    	addi $5, $0, 28
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 44
+    	addi $6, $0, 4
+    	addi $7, $0, 32
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 51
+    	addi $5, $0, 40
+    	addi $6, $0, 4
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 54
+    	addi $5, $0, 32
+    	addi $6, $0, 8
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
+   	
+   	# O
+   	
+   	addi $4, $0, 23
+    	addi $5, $0, 56
+    	addi $6, $0, 4
+    	addi $7, $0, 32
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 60
+    	addi $6, $0, 14
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 23
+    	addi $5, $0, 74
+    	addi $6, $0, 4
+    	addi $7, $0, 32
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 54
+    	addi $5, $0, 60
+    	addi $6, $0, 14
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
+   	#U
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 86
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 55
+    	addi $5, $0, 90
+    	addi $6, $0, 16
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 106
+    	addi $6, $0, 4
+    	addi $7, $0, 36
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
+   	
+   	# W
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 126
+    	addi $6, $0, 4
+    	addi $7, $0, 40
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 56
+    	addi $5, $0, 130
+    	addi $6, $0, 4
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 53
+    	addi $5, $0, 134
+    	addi $6, $0, 4
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
+   	addi $4, $0, 30
+    	addi $5, $0, 138
+    	addi $6, $0, 4
+    	addi $7, $0, 24
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   		
+   	addi $4, $0, 53
+    	addi $5, $0, 142
+    	addi $6, $0, 4
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   		
+   	addi $4, $0, 56
+    	addi $5, $0, 146
+    	addi $6, $0, 4
+    	addi $7, $0, 4
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 150
+    	addi $6, $0, 4
+    	addi $7, $0, 40
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
+   	
+   	# I
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 162
+    	addi $6, $0, 4
+    	addi $7, $0, 40
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
+   	
+   	# N
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 174
+    	addi $6, $0, 4
+    	addi $7, $0, 40
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 178
+    	addi $6, $0, 4
+    	addi $7, $0, 8
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 23
+    	addi $5, $0, 182
+    	addi $6, $0, 4
+    	addi $7, $0, 12
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 29
+    	addi $5, $0, 186
+    	addi $6, $0, 4
+    	addi $7, $0, 12
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	 	
+   	addi $4, $0, 35
+    	addi $5, $0, 190
+    	addi $6, $0, 4
+    	addi $7, $0, 12
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	addi $4, $0, 20
+    	addi $5, $0, 194
+    	addi $6, $0, 4
+    	addi $7, $0, 40
+   	ori  $9, $0, 0xe3c310
+   	jal painter
+   	
+   	
