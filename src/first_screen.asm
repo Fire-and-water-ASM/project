@@ -1,7 +1,7 @@
 .text
 	main:
 		
-		jal  startergame  
+		jal  start  
 		
 # --- FUNCTIONS --------------------------------------------------------------- #
 
@@ -884,84 +884,84 @@ start:
 	#Details: Horizontal
     	addi $4, $0, 0
    		addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    		ori  $9, $0, 0x5a660f 
    		jal painter
    	
     	addi $4, $0, 12
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
     	addi $4, $0, 24
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
     	addi $4, $0, 36
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 48
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 60
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 72
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 84
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 96
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 108
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 120
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
    	
    	addi $4, $0, 132
     	addi $5, $0, 0
-    	addi $6, $0, 256
+    	addi $6, $0, 255
     	addi $7, $0, 6 
    	ori  $9, $0, 0x5a660f 
    	jal painter
@@ -970,77 +970,77 @@ start:
    	addi $4, $0, 0
     	addi $5, $0, 0
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 24
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 48
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 72
     	addi $6, $0, 6
-    	addi $7, $0 256 
+    	addi $7, $0 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 96
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 120
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 144
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 168
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 192
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 216
     	addi $6, $0, 6
-    	addi $7, $0, 256 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
    	addi $4, $0, 0
     	addi $5, $0, 240
     	addi $6, $0, 6
-    	addi $7, $0, 512 
+    	addi $7, $0, 128 
    	ori  $9, $0, 0x2b3205
    	jal painter
    	
@@ -1049,8 +1049,7 @@ start:
    	 addi $15, $0, 50
    	 addi $16, $0, -2
    	 addi $17, $0, -2
-   	 
-reset_map: 
+   	
  
 	#Routes
 	#0:57 - 68:71
@@ -1940,10 +1939,182 @@ fire_barrier:
     	addi $7, $0, 3
     	ori  $9, $0, 0xBCE2FC
    	 jal painter
-		
-	add $23, $23, $16	
+reset_map: 		
 		
 paint_fireball:
+		
+		addi $4, $22, 17
+add $5, $23, 460
+addi $6, $0, 8
+addi $7, $0, 12
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 18
+addi $5, $23, 459
+addi $6, $0, 1
+addi $7, $0, 10
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 19
+addi $5, $23, 458
+addi $6, $0, 1
+addi $7, $0, 8
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 18
+addi $5, $23, 468
+addi $6, $0, 2
+addi $7, $0, 10
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 19
+addi $5, $23, 470
+addi $6, $0, 2
+addi $7, $0, 8
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 20
+addi $5, $23, 472
+addi $6, $0, 2
+addi $7, $0, 6
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 21
+addi $5, $23, 474
+addi $6, $0, 2
+addi $7, $0, 4
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 22
+addi $5, $23, 476
+addi $6, $0, 2
+addi $7, $0, 2
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 23
+addi $5, $23, 478
+addi $6, $0, 1
+addi $7, $0, 1
+ori  $9, $0, 0x706535
+jal painter
+
+# Second layer
+addi $4, $22, 18
+addi $5, $23, 460
+addi $6, $0, 8
+addi $7, $0, 10
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 19
+addi $5, $23, 459
+addi $6, $0, 1
+addi $7, $0, 8
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 19
+addi $5, $23, 468
+addi $6, $0, 2
+addi $7, $0, 8
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 20
+addi $5, $23, 470
+addi $6, $0, 2
+addi $7, $0, 6
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 21
+addi $5, $23, 472
+addi $6, $0, 2
+addi $7, $0, 4
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 22
+addi $5, $23, 475
+addi $6, $0, 1
+addi $7, $0, 2
+ori  $9, $0, 0x706535
+jal painter
+
+# Three layer
+addi $4, $22, 19
+addi $5, $23, 460
+addi $6, $0, 8
+addi $7, $0, 8
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 20
+addi $5, $23, 459
+addi $6, $0, 1
+addi $7, $0, 6
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 20
+addi $5, $23, 468
+addi $6, $0, 2
+addi $7, $0, 6
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 21
+addi $5, $23, 470
+addi $6, $0, 2
+addi $7, $0, 4
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 22
+addi $5, $23, 472
+addi $6, $0, 3
+addi $7, $0, 2
+ori  $9, $0, 0x706535
+jal painter
+
+# Four layer
+addi $4, $22, 20
+addi $5, $23, 462
+addi $6, $0, 6
+addi $7, $0, 6
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 21
+addi $5, $23, 461
+addi $6, $0, 1
+addi $7, $0, 4
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 21
+addi $5, $23, 468
+addi $6, $0, 2
+addi $7, $0, 4
+ori  $9, $0, 0x706535
+jal painter
+
+addi $4, $22, 22
+addi $5, $23, 470
+addi $6, $0, 2
+addi $7, $0, 2
+ori  $9, $0, 0x706535
+jal painter
+	
+	add $23, $23, $16	
 
         addi $4, $22, 17
         add $5, $23, 460
@@ -2116,11 +2287,144 @@ paint_fireball:
         ori  $9, $0, 0xFAE846
         jal painter
         
-
-     
-     add $25, $25, $17
-     
 paint_waterball:
+     
+         addi $4, $24, 71
+    add $5, $25, 210
+    addi $6, $0, 8
+    addi $7, $0, 12
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 72
+    addi $5, $25, 209
+    addi $6, $0, 1
+    addi $7, $0, 10
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 73
+    addi $5, $25, 208
+    addi $6, $0, 1
+    addi $7, $0, 8
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 72
+    addi $5, $25, 218
+    addi $6, $0, 2
+    addi $7, $0, 10
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 73
+    addi $5, $25, 220
+    addi $6, $0, 2
+    addi $7, $0, 8
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 74
+    addi $5, $25, 222
+    addi $6, $0, 2
+    addi $7, $0, 6
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 75
+    addi $5, $25, 224
+    addi $6, $0, 2
+    addi $7, $0, 4
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 76
+    addi $5, $25, 226
+    addi $6, $0, 2
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 77
+    addi $5, $25, 228
+    addi $6, $0, 1
+    addi $7, $0, 1
+    ori  $9, $0, 0x706535
+    jal painter
+
+    # second layer
+
+    addi $4, $24, 73
+    addi $5, $25, 208
+    addi $6, $0, 1
+    addi $7, $0, 8
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 78
+    addi $5, $25, 209
+    addi $6, $0, 1
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 79
+    addi $5, $25, 209
+    addi $6, $0, 2
+    addi $7, $0, 3
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 79
+    addi $5, $25, 210
+    addi $6, $0, 2
+    addi $7, $0, 4
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 81
+    addi $5, $25, 210
+    addi $6, $0, 8
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 80
+    addi $5, $25, 218
+    addi $6, $0, 2
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 79
+    addi $5, $25, 220
+    addi $6, $0, 2
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 78
+    addi $5, $25, 222
+    addi $6, $0, 2
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 77
+    addi $5, $25, 224
+    addi $6, $0, 2
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+    addi $4, $24, 76
+    addi $5, $25, 226
+    addi $6, $0, 2
+    addi $7, $0, 2
+    ori  $9, $0, 0x706535
+    jal painter
+
+add $25, $25, $17
     
     addi $4, $24, 71
     add $5, $25, 210
@@ -2696,6 +3000,11 @@ right_wg:
 		sw $4, 4($8)
 		
 		j targed
+		
+
+	
+	
+		j targed		
 		
 		
 targed:		
