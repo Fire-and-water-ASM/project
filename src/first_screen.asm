@@ -1098,7 +1098,7 @@ start:
         addi $5, $0, 74
         addi $6, $0, 15
         addi $7, $0, 15
-        ori  $9, $0, 0x8D8044
+        ori  $9, $0, 0x706535
         jal painter
         
         #139:30 - 158:46
@@ -1122,7 +1122,7 @@ start:
         addi $5, $0, 236
         addi $6, $0, 15
         addi $7, $0, 15
-        ori  $9, $0, 0x8D8044
+        ori  $9, $0, 0x706535
         jal painter
         
         #239:47 - 254:83
@@ -1161,7 +1161,7 @@ start:
         addi $5, $0, 16
         addi $6, $0, 15
         addi $7, $0, 15
-        ori  $9, $0, 0x8D8044
+        ori  $9, $0, 0x706535
         jal painter
         
         #76:89 SAFE AREA
@@ -1169,7 +1169,7 @@ start:
         addi $5, $0, 99
         addi $6, $0, 15
         addi $7, $0, 15
-        ori  $9, $0, 0x8D8044
+        ori  $9, $0, 0x706535
         jal painter
         
         #84:69 - 99:88
@@ -1217,7 +1217,7 @@ start:
         addi $5, $0, 146
         addi $6, $0, 15
         addi $7, $0, 15
-        ori  $9, $0, 0x8D8044
+        ori  $9, $0, 0x706535
         jal painter
         
         #193:104 - 210:122
@@ -1233,7 +1233,7 @@ start:
         addi $5, $0, 208
         addi $6, $0, 15
         addi $7, $0, 15
-        ori  $9, $0, 0x8D8044
+        ori  $9, $0, 0x706535
         jal painter
         
         #Walls
@@ -2114,66 +2114,66 @@ addi $7, $0, 3
 ori  $9, $0, 0x706535
 jal painter   	 
    	 
-fire_barrier:
+       water_barrier:
 	
 	addi $4, $0, 36
     	addi $5, $0, 230 
     	addi $6, $0, 3
     	addi $7, $0, 15 
-    	ori  $9, $0, 0xFA0100
+    	ori  $9, $0, 0x0195FF
    	 jal painter 
    	 
    	 addi $4, $0, 36
     	addi $5, $0,230 
     	addi $6, $0, 1
     	addi $7, $0, 3
-    	ori  $9, $0, 0xFAE846
+    	ori  $9, $0, 0xBCE2FC
    	 jal painter 
    	 
    	  addi $4, $0, 38
     	addi $5, $0,232  
     	addi $6, $0, 1
     	addi $7, $0, 11
-    	ori  $9, $0, 0xFAE846
+    	ori  $9, $0, 0xBCE2FC
    	 jal painter 
    	 
    	   addi $4, $0, 48 
     	addi $5, $0,231 
     	addi $6, $0, 1
     	addi $7, $0, 3
-    	ori  $9, $0, 0xFAE846
+    	ori  $9, $0, 0xBCE2FC
    	 jal painter 
    	 
    	 
    	 
-   	 water_barrier:
+   	 fire_barrier:
 	
 	addi $4, $0, 87
     	addi $5, $0,230 
     	addi $6, $0, 3
     	addi $7, $0, 15 
-    	ori  $9, $0, 0x0195FF
+    	ori  $9, $0, 0xFA0100
    	 jal painter 
    	 
    	 addi $4, $0, 87 
     	addi $5, $0,230 
     	addi $6, $0, 1
     	addi $7, $0, 3
-    	ori  $9, $0, 0xBCE2FC
+    	ori  $9, $0, 0xFAE846
    	 jal painter 
    	 
    	  addi $4, $0, 89
     	addi $5, $0,232  
     	addi $6, $0, 1
     	addi $7, $0, 11
-    	ori  $9, $0, 0xBCE2FC
+    	ori  $9, $0, 0xFAE846
    	 jal painter 
    	 
    	   addi $4, $0, 99
     	addi $5, $0,231 
     	addi $6, $0, 1
     	addi $7, $0, 3
-    	ori  $9, $0, 0xBCE2FC
+    	ori  $9, $0, 0xFAE846
    	 jal painter
 		
 	
@@ -2886,6 +2886,7 @@ jal painter
     addi $7, $0, 2
     ori  $9, $0, 0xBCE2FC
     jal painter
+   
     
     #PINTANDO A SAIDA
     
@@ -3634,7 +3635,7 @@ reset_map2:
 		addi $5, $0, 8
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		#(23:20 - 104:34)
@@ -3666,7 +3667,7 @@ reset_map2:
 		addi $5, $0, 109
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		#(128:19 - 142:40)
@@ -3689,7 +3690,7 @@ reset_map2:
 		addi $5, $0, 196
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		#(143:19 - 196:33)
@@ -3711,7 +3712,7 @@ reset_map2:
 		addi $5, $0, 150
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		addi $4, $0, 69
@@ -3732,7 +3733,7 @@ reset_map2:
 		addi $5, $0, 235
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		addi $4, $0, 28
@@ -3774,7 +3775,7 @@ reset_map2:
 		addi $5, $0, 119
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		addi $4, $0, 100
@@ -3795,7 +3796,7 @@ reset_map2:
 		addi $5, $0, 11
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		addi $4, $0, 69
@@ -3837,7 +3838,7 @@ reset_map2:
 		addi $5, $0, 55
 		addi $6, $0, 15
 		addi $7, $0, 15
-		ori  $9, $0, 0x8D8044
+		ori  $9, $0, 0x706535
 		jal painter
 		
 		addi $4, $0, 57
