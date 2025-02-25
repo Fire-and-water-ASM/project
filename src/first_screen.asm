@@ -2890,9 +2890,17 @@ jal painter
     
     #PINTANDO A SAIDA
     
+     
     addi $4, $0, 87
-    addi $5, $0, 253
-    addi $6, $0, 3
+    addi $5, $0, 250
+    addi $6, $0, 4
+    addi $7, $0, 15
+    ori  $9, $0, 0x191b03
+    jal painter
+    
+     addi $4, $0, 87
+    addi $5, $0, 235
+    addi $6, $0, 15
     addi $7, $0, 15
     ori  $9, $0, 0x8A7C41
     jal painter
@@ -2900,6 +2908,13 @@ jal painter
     addi $4, $0, 59
     addi $5, $0, 253
     addi $6, $0, 3
+    addi $7, $0, 15
+    ori  $9, $0, 0x191b03
+    jal painter
+    
+       addi $4, $0, 59
+    addi $5, $0, 237
+    addi $6, $0, 15
     addi $7, $0, 15
     ori  $9, $0, 0x8A7C41
     jal painter
